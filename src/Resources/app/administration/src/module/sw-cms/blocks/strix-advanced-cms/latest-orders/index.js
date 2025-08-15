@@ -26,7 +26,7 @@ Shopware.Service("cmsService").registerCmsBlock({
             type: "strix-latest-orders",
             default: {
                 config: {
-                    numberOfOrders: { source: "static", value: 5 },
+                    numberOfOrders: { source: "static", value: 3 },
                     showStatus: { source: "static", value: true },
                 },
             },

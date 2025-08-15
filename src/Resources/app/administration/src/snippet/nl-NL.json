@@ -4,7 +4,7 @@
       "detail": {
         "label": {
           "blockCategory": {
-            "strix-advanced-cms": "Strix Geavanceerde CMS"
+            "strix-advanced-cms": "Strix Advanced CMS"
           }
         }
       }
@@ -13,7 +13,10 @@
   "sw-cms": {
     "elements": {
       "strix-latest-orders": {
-        "label": "Strix: Laatste bestellingen"
+        "label": "Strix: Laatste bestellingen",
+        "config": {
+          "numberOfOrders": "Aantal bestellingen"
+        }
       }
     },
     "blocks": {

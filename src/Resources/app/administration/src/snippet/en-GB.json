@@ -13,7 +13,10 @@
   "sw-cms": {
     "elements": {
       "strix-latest-orders": {
-        "label": "Strix: Latest Orders"
+        "label": "Strix: Latest Orders",
+        "config": {
+          "numberOfOrders": "Number of orders"
+        }
       }
     },
     "blocks": {

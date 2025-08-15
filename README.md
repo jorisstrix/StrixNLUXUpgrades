@@ -84,7 +84,7 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 │   │           │   └── cms-block-strix-block-latest-orders.html.twig
 │   │           └── element
 │   │               └── cms-element-strix-latest-orders.html.twig
-│   └── StrixAdvancedCMSExtensions.php
+│   └── StrixAdvancedCMSExtensions.phpd
 ├── structure.txt
 └── tests
     └── TestBootstrap.php
@@ -95,7 +95,8 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 ## Usage
 
 1. In Administration → Shopping Experiences, add the block from category Strix Advanced CMS or replace an element in an existing block with Strix: Latest Orders.
-2. The element renders only for logged-in customers. Guests see nothing.
+    - The amount of last orders to show can be configured in the element settings. Default is the latest 3.
+2. The element renders only for logged-in customers with Orders. Guests and customer without orders see nothing.
 3. The title row includes a link to the My Account Order list. Optional total order count can be shown next to the link.
 
 ## Translations

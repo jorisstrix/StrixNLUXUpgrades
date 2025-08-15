@@ -32,7 +32,7 @@ class StrixLatestOrdersCmsElementResolver extends AbstractCmsElementResolver
             return null;
         }
 
-        $limit = (int) ($slot->getFieldConfig()->get('numberOfOrders')?->getValue() ?? 5);
+        $limit = (int) ($slot->getFieldConfig()->get('numberOfOrders')?->getValue() ?? 3);
 
         $criteria = new Criteria();
         $criteria->addFilter(new EqualsFilter('orderCustomer.customerId', $sc->getCustomerId()));
@@ -59,18 +59,7 @@ class StrixLatestOrdersCmsElementResolver extends AbstractCmsElementResolver
         $search = $result->get($key);
 
         $orders = $search ? $search->getEntities() : [];
-        $total = $search && $search->getTotal() !== null ? $search->getTotal() : 0;
-
-        if ($search && $total === 0) {
-            $sc = $resolverContext->getSalesChannelContext();
-            $countCriteria = new Criteria();
-            foreach ($search->getCriteria()->getFilters() as $filter) {
-                $countCriteria->addFilter($filter);
-            }
-            $countCriteria->setTotalCountMode(Criteria::TOTAL_COUNT_MODE_EXACT);
-            $countCriteria->setLimit(1);
-            $total = $this->orderRepository->searchIds($countCriteria, $sc->getContext())->getTotal();
-        }
+        $total  = $search && $search->getTotal() !== null ? $search->getTotal() : 0;
 
         $slot->setData(new ArrayStruct([
             'orders' => $orders,
