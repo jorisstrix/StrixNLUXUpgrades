@@ -41,14 +41,16 @@
 3. Find the category **“Strix Advanced CMS”** in the block picker.
 4. Drag **“Strix: Latest Orders”** onto your layout OR use it as a replacement element in an existing block.
 5. Select the element to open **Settings** and set **Number of orders** (default: 3).
-6. Save the layout and assign it to your page(s).
+6. Save the layout and assign it to your categories.
 
 ## What to expect in the Storefront
 
 -   The element shows the customer’s latest order(s) with statuses, payment/shipping info, and items.
--   A link to **All orders** is shown in the header; optionally displays the customer’s total order count.
+-   A link to **All orders** is shown in the header; and displays the customer’s total order count.
 -   If the visitor is not logged in or has no orders, the element does not render (no empty box).
 -   In the cart, changing an item’s quantity to **0** removes it immediately (no manual refresh required).
+-   On the same row as the sorting options, the amount of products found on the listing are shown.
+-   Everyrthing seen on the storefront is translatable by a (new) snippet.
 
 ## Translations (keys to provide)
 
@@ -76,3 +78,5 @@ Storefront:
 ## Notes
 
 -   Default number of orders shown is **3** (configurable in the element settings).
+-   No additional CSS/Vue.js/Javascript is used. The Shopware core is preserved
+-
