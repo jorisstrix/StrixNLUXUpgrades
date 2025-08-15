@@ -1,132 +1,78 @@
-# Strix Advanced CMS Extensions
+# STRIX ADVANCED CMS EXTENSIONS (v1.2.0)
 
-Latest Orders CMS element and block for Shopware 6.7.
+## What this plugin does
 
-## Overview
+1. Latest Orders CMS element & block
 
-This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let you place the customer’s latest order anywhere in Shopping Experiences. The storefront output mirrors the “Last order” card from the My Account overview. The element renders only for logged-in customers.
+    - Adds a CMS element `strix-latest-orders` and a block you can place anywhere in Shopping Experiences.
+    - Renders the same “Last order” card as on the My Account overview.
+    - Only renders for logged-in customers (nothing is shown to guests or customers without orders).
+
+2. Cart quality-of-life (merged in v1.2.0)
+
+    - Cart items with quantity set to 0 are removed automatically (offcanvas cart + full cart page). Can be activated.
+
+3. Sort cart by latest added line item first (merged in v1.2.1)
+
+    - Show the latest added line item first in off-canvas cart and cart page and ort to oldest.
+
+4. Show the amount of product present in the Product listings (merged in v1.2.1)
+    - By default the amount of products present on the product listings in Category pages are shown.
 
 ## Compatibility
 
--   Shopware: 6.7.x
--   PHP: per Shopware 6.7 requirements
+-   Shopware 6.7.x
 
-## Features
+## Installation (local plugin)
 
--   CMS element `strix-latest-orders`
--   CMS block under a custom category “Strix Advanced CMS”
--   Storefront rendering identical to the account overview “Last order” card
--   Link to “All orders” with a translation key and total order count
--   Element setting to configure the amount of last orders to be shown
--   Proper admin previews and min-heights
--   Resolver loads transactions, deliveries, payment/shipping methods, and line items
+1. Place the plugin in: custom/plugins/StrixNLUxUpgrades
+2. In your project root run:
+   composer require strixnl/uxupgrades
+   bin/console plugin:refresh
+   bin/console plugin:install --activate StrixNLUxUpgrades
+   bin/console cache:clear
+   bin/console administration:build
+   bin/console theme:compile
 
-## File Structure
+## How to use it in the Administration
 
-```
-.
-├── composer.json
-├── phpunit.xml
-├── README.md
-├── src
-│   ├── Core
-│   │   └── Content
-│   │       └── Cms
-│   │           └── StrixLatestOrdersCmsElementResolver.php
-│   ├── Resources
-│   │   ├── app
-│   │   │   └── administration
-│   │   │       ├── build
-│   │   │       │   └── administration.json
-│   │   │       └── src
-│   │   │           ├── asset
-│   │   │           │   └── style
-│   │   │           │       └── strix-cms.scss
-│   │   │           ├── main.js
-│   │   │           ├── module
-│   │   │           │   └── sw-cms
-│   │   │           │       ├── blocks
-│   │   │           │       │   └── strix-advanced-cms
-│   │   │           │       │       └── latest-orders
-│   │   │           │       │           ├── component
-│   │   │           │       │           │   └── sw-cms-block-strix-block-latest-orders.html.twig
-│   │   │           │       │           ├── index.js
-│   │   │           │       │           └── preview
-│   │   │           │       │               └── sw-cms-preview-strix-block-latest-orders.html.twig
-│   │   │           │       └── elements
-│   │   │           │           └── strix-latest-orders
-│   │   │           │               ├── component
-│   │   │           │               │   └── sw-cms-el-strix-latest-orders.html.twig
-│   │   │           │               ├── config
-│   │   │           │               │   ├── index.js
-│   │   │           │               │   └── sw-cms-el-config-strix-latest-orders.html.twig
-│   │   │           │               ├── index.js
-│   │   │           │               └── preview
-│   │   │           │                   └── sw-cms-el-preview-strix-latest-orders.html.twig
-│   │   │           └── snippet
-│   │   │               ├── de-DE.json
-│   │   │               ├── en-GB.json
-│   │   │               └── nl-NL.json
-│   │   ├── config
-│   │   │   ├── config.xml
-│   │   │   ├── plugin.png
-│   │   │   └── services.xml
-│   │   ├── public
-│   │   │   └── administration
-│   │   │       └── assets
-│   │   │           ├── strix-advanced-c-m-s-extensions-Cxrpl4Za.js
-│   │   │           ├── strix-advanced-c-m-s-extensions-Cxrpl4Za.js.map
-│   │   │           └── strix-advanced-c-m-s-extensions-LqVPT7H-.css
-│   │   ├── snippet
-│   │   │   ├── de-DE.json
-│   │   │   ├── en-GB.json
-│   │   │   └── nl-NL.json
-│   │   └── views
-│   │       └── storefront
-│   │           ├── block
-│   │           │   └── cms-block-strix-block-latest-orders.html.twig
-│   │           └── element
-│   │               └── cms-element-strix-latest-orders.html.twig
-│   └── StrixAdvancedCMSExtensions.php
-├── structure.txt
-└── tests
-    └── TestBootstrap.php
+1. Go to: Content → Shopping Experiences.
+2. Create or edit a layout.
+3. Find the category **“Strix Advanced CMS”** in the block picker.
+4. Drag **“Strix: Latest Orders”** onto your layout OR use it as a replacement element in an existing block.
+5. Select the element to open **Settings** and set **Number of orders** (default: 3).
+6. Save the layout and assign it to your page(s).
 
-35 directories, 32 files
+## What to expect in the Storefront
 
-```
+-   The element shows the customer’s latest order(s) with statuses, payment/shipping info, and items.
+-   A link to **All orders** is shown in the header; optionally displays the customer’s total order count.
+-   If the visitor is not logged in or has no orders, the element does not render (no empty box).
+-   In the cart, changing an item’s quantity to **0** removes it immediately (no manual refresh required).
 
-## Usage
+## Translations (keys to provide)
 
-1. In Administration → Shopping Experiences, add the block from category Strix Advanced CMS or replace an element in an existing block with Strix: Latest Orders.
-    - The amount of last orders to show can be configured in the element settings. Default is the latest 3.
-2. The element renders only for logged-in customers with Orders. Guests and customer without orders see nothing.
-3. The title row includes a link to the My Account Order list. Optional total order count can be shown next to the link.
+Administration (block picker & labels):
 
-## Translations
+-   sw-cms.detail.label.blockCategory.strix-advanced-cms → “Strix Advanced CMS”
+-   sw-cms.elements.strix-latest-orders.label → “Strix: Latest Orders”
+-   sw-cms.blocks.strix-block-latest-orders.label → “Strix: Latest Orders”
 
-Snippet: strix.account.ShowAllOrders
+Storefront:
 
-## Admin Category Label
+-   strix.account.ShowAllOrders → “Show all orders”
+-   listing.actions.results.label → “results“
 
-The CMS block appears under a custom category. Provide a label via Administration snippets so the category name displays in the block picker. Ensure your admin snippet files contain a key for the category, and that main.js imports the admin snippets.
+## Troubleshooting (quick)
 
-## Developer Notes
+-   Block category missing in admin:
+    -   Rebuild administration after installing/renaming the plugin: bin/console administration:build
+    -   Ensure main.js imports your CMS element and block modules and your admin snippet files.
+-   Element renders nothing:
+    -   Log in with a customer that has orders, or reduce the configured amount if the shop has very few orders.
+-   Cart quantity “0” does not remove items:
+    -   Recompile theme after installing: bin/console theme:compile
 
--   Element type: strix-latest-orders
--   Resolver signature (Shopware 6.7):
-    -   `collect(CmsSlotEntity $slot, ResolverContext $resolverContext): ?CriteriaCollection`
-    -   `enrich(CmsSlotEntity $slot, ResolverContext $resolverContext, ElementDataCollection $result): void`
--   Associations loaded:
-    -   `transactions.stateMachineState`, `transactions.paymentMethod`
-    -   `deliveries.stateMachineState`, `deliveries.shippingMethod`
-    -   `lineItems`, `lineItems.product`, `lineItems.product.cover`
--   Total order count:
-    -   Exposed as `element.data.totalOrders` for use in the link text.
+## Notes
 
-## Troubleshooting
-
--   Block selectable but element missing inside block: add storefront block template `views/storefront/block/cms-block-<name>.html.twig` and include its slot element templates.
--   Admin error `Object.keys(undefined):` ensure the block uses expanded slots with `default.config` and the element defines `defaultConfig`.
--   Order detail route error for deep link: `use path('frontend.account.order.single.page', { orderId: order.id, deepLinkCode: order.deepLinkCode })` or fall back to `frontend.account.order.page`.
--   Missing line items in table: add `lineItems` and related associations in the resolver criteria.
+-   Default number of orders shown is **3** (configurable in the element settings).

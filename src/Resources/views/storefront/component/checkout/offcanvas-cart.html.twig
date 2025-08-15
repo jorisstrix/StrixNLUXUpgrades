@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart.html.twig' %}
+
+{% block component_offcanvas_cart_items %}
+	<ul class="offcanvas-cart-items list-unstyled">
+		{% for lineItem in page.cart.lineItems|reverse %}
+			{{ block ('component_offcanvas_cart_item') }}
+		{% endfor %}
+	</ul>
+{% endblock %}

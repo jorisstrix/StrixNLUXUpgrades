@@ -3,5 +3,12 @@
     "account": {
       "ShowAllOrders": "Alle Bestellungen anzeigen"
     }
+  },
+  "listing": {
+    "actions": {
+      "results": {
+        "label": "Ergebnisse"
+      }
+    }
   }
 }
