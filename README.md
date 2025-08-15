@@ -25,43 +25,40 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 
 ```
 custom/plugins/StrixAdvancedCMSExtensions/
-├─ composer.json
-├─ src/
-│ ├─ StrixAdvancedCMSExtensions.php
-│ ├─ Core/
-│ │ └─ Content/
-│ │ └─ Cms/
-│ │ └─ StrixLatestOrdersCmsElementResolver.php
-│ └─ Resources/
-│ ├─ config/
-│ │ └─ services.xml
-│ ├─ snippet/
-│ │ ├─ en-GB.json
-│ │ ├─ nl-NL.json
-│ │ └─ de-DE.json
-│ ├─ app/
-│ │ └─ administration/
-│ │ └─ src/
-│ │ ├─ main.js
-│ │ ├─ asset/
-│ │ │ └─ style/strix-cms.scss
-│ │ └─ module/
-│ │ └─ sw-cms/
-│ │ ├─ elements/
-│ │ │ └─ strix-latest-orders/
-│ │ │ ├─ index.js
-│ │ │ ├─ component/sw-cms-el-strix-latest-orders.html.twig
-│ │ │ └─ preview/sw-cms-el-preview-strix-latest-orders.html.twig
-│ │ └─ blocks/
-│ │ └─ strix-advanced-cms/
-│ │ └─ latest-orders/
-│ │ ├─ index.js
-│ │ ├─ component/sw-cms-block-strix-block-latest-orders.html.twig
-│ │ └─ preview/sw-cms-preview-strix-block-latest-orders.html.twig
-│ └─ views/
-│ └─ storefront/
-│ ├─ block/cms-block-strix-block-latest-orders.html.twig
-│ └─ element/cms-element-strix-latest-orders.html.twig
+├── composer.json
+├── phpunit.xml
+├── README.md
+├── src
+│   ├── Core
+│   │   └── Content
+│   │       └── Cms
+│   │           └── StrixLatestOrdersCmsElementResolver.php
+│   ├── Resources
+│   │   ├── app
+│   │   │   └── administration
+│   │   │       ├── build
+│   │   │       └── src
+│   │   ├── config
+│   │   │   ├── config.xml
+│   │   │   ├── plugin.png
+│   │   │   └── services.xml
+│   │   ├── public
+│   │   │   └── administration
+│   │   │       └── assets
+│   │   ├── snippet
+│   │   │   ├── de-DE.json
+│   │   │   ├── en-GB.json
+│   │   │   └── nl-NL.json
+│   │   └── views
+│   │       └── storefront
+│   │           ├── block
+│   │           └── element
+│   └── StrixAdvancedCMSExtensions.php
+├── structure.txt
+└── tests
+    └── TestBootstrap.php
+
+20 directories, 13 files
 ```
 
 ## Usage

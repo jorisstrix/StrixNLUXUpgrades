@@ -1,0 +1,35 @@
+.
+├── composer.json
+├── phpunit.xml
+├── README.md
+├── src
+│   ├── Core
+│   │   └── Content
+│   │       └── Cms
+│   │           └── StrixLatestOrdersCmsElementResolver.php
+│   ├── Resources
+│   │   ├── app
+│   │   │   └── administration
+│   │   │       ├── build
+│   │   │       └── src
+│   │   ├── config
+│   │   │   ├── config.xml
+│   │   │   ├── plugin.png
+│   │   │   └── services.xml
+│   │   ├── public
+│   │   │   └── administration
+│   │   │       └── assets
+│   │   ├── snippet
+│   │   │   ├── de-DE.json
+│   │   │   ├── en-GB.json
+│   │   │   └── nl-NL.json
+│   │   └── views
+│   │       └── storefront
+│   │           ├── block
+│   │           └── element
+│   └── StrixAdvancedCMSExtensions.php
+├── structure.txt
+└── tests
+    └── TestBootstrap.php
+
+20 directories, 13 files
