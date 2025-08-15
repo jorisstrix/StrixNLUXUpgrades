@@ -1,0 +1,32 @@
+{
+    "name": "strixnl/uxupgrades",
+    "description": "Plugin for Shopware UX Upgrades",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joris"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "StrixNLUxUpgrades\\StrixNLUxUpgrades",
+        "label": {
+            "de-DE": "Strix UX Upgrades",
+            "en-GB": "Strix UX Upgrades",
+            "nl-NL": "Strix UX Upgrades"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "StrixNLUxUpgrades\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StrixNLUxUpgrades\\Tests\\": "tests/"
+        }
+    }
+}

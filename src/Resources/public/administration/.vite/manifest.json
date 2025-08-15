@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/strix-n-l-ux-upgrades-B1xdzA78.js",
+    "name": "strix-n-l-ux-upgrades",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/strix-n-l-ux-upgrades-BKg5JuCq.css"
+    ]
+  }
+}

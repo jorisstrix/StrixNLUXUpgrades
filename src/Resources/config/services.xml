@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <!-- CMS element resolver -->
+        <service id="StrixNLUxUpgrades\Core\Content\Cms\StrixLatestOrdersCmsElementResolver">
+            <argument type="service" id="order.repository"/>
+            <tag name="shopware.cms.data_resolver"/>
+        </service>
+    </services>
+</container>

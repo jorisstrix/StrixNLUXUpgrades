@@ -1,0 +1,28 @@
+{
+  "apps": {
+    "sw-cms": {
+      "detail": {
+        "label": {
+          "blockCategory": {
+            "strix-advanced-cms": "Strix Advanced CMS"
+          }
+        }
+      }
+    }
+  },
+  "sw-cms": {
+    "elements": {
+      "strix-latest-orders": {
+        "label": "Strix: Neueste Bestellungen",
+        "config": {
+          "numberOfOrders": "Anzahl der Bestellungen"
+        }
+      }
+    },
+    "blocks": {
+      "strix-block-latest-orders": {
+        "label": "Strix: Neueste Bestellungen"
+      }
+    }
+  }
+}

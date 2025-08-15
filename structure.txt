@@ -1,0 +1,69 @@
+.
+├── composer.json
+├── phpunit.xml
+├── README.md
+├── src
+│   ├── Core
+│   │   └── Content
+│   │       └── Cms
+│   │           └── StrixLatestOrdersCmsElementResolver.php
+│   ├── Resources
+│   │   ├── app
+│   │   │   └── administration
+│   │   │       ├── build
+│   │   │       │   └── administration.json
+│   │   │       └── src
+│   │   │           ├── asset
+│   │   │           │   └── style
+│   │   │           │       └── strix-cms.scss
+│   │   │           ├── main.js
+│   │   │           ├── module
+│   │   │           │   └── sw-cms
+│   │   │           │       ├── blocks
+│   │   │           │       │   └── strix-advanced-cms
+│   │   │           │       │       └── latest-orders
+│   │   │           │       │           ├── component
+│   │   │           │       │           │   └── sw-cms-block-strix-block-latest-orders.html.twig
+│   │   │           │       │           ├── index.js
+│   │   │           │       │           └── preview
+│   │   │           │       │               └── sw-cms-preview-strix-block-latest-orders.html.twig
+│   │   │           │       └── elements
+│   │   │           │           └── strix-latest-orders
+│   │   │           │               ├── component
+│   │   │           │               │   └── sw-cms-el-strix-latest-orders.html.twig
+│   │   │           │               ├── config
+│   │   │           │               │   ├── index.js
+│   │   │           │               │   └── sw-cms-el-config-strix-latest-orders.html.twig
+│   │   │           │               ├── index.js
+│   │   │           │               └── preview
+│   │   │           │                   └── sw-cms-el-preview-strix-latest-orders.html.twig
+│   │   │           └── snippet
+│   │   │               ├── de-DE.json
+│   │   │               ├── en-GB.json
+│   │   │               └── nl-NL.json
+│   │   ├── config
+│   │   │   ├── config.xml
+│   │   │   ├── plugin.png
+│   │   │   └── services.xml
+│   │   ├── public
+│   │   │   └── administration
+│   │   │       └── assets
+│   │   │           ├── strix-advanced-c-m-s-extensions-DzN_qEv_.js
+│   │   │           ├── strix-advanced-c-m-s-extensions-DzN_qEv_.js.map
+│   │   │           └── strix-advanced-c-m-s-extensions-LqVPT7H-.css
+│   │   ├── snippet
+│   │   │   ├── de-DE.json
+│   │   │   ├── en-GB.json
+│   │   │   └── nl-NL.json
+│   │   └── views
+│   │       └── storefront
+│   │           ├── block
+│   │           │   └── cms-block-strix-block-latest-orders.html.twig
+│   │           └── element
+│   │               └── cms-element-strix-latest-orders.html.twig
+│   └── StrixNLUxUpgrades.php
+├── structure.txt
+└── tests
+    └── TestBootstrap.php
+
+35 directories, 32 files
