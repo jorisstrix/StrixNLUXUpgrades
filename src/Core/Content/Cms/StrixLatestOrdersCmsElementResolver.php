@@ -37,13 +37,22 @@ class StrixLatestOrdersCmsElementResolver extends AbstractCmsElementResolver
         $criteria = new Criteria();
         $criteria->addFilter(new EqualsFilter('orderCustomer.customerId', $sc->getCustomerId()));
         $criteria->addSorting(new FieldSorting('orderDateTime', FieldSorting::DESCENDING));
-        $criteria->addAssociation('transactions.stateMachineState');
+
+        // Required for status badges in Twig
+        $criteria->addAssociation('stateMachineState'); // order status
+        $criteria->addAssociation('transactions.stateMachineState'); // payment status
         $criteria->addAssociation('transactions.paymentMethod');
-        $criteria->addAssociation('deliveries.stateMachineState');
+        $criteria->addAssociation('deliveries.stateMachineState'); // shipping status
         $criteria->addAssociation('deliveries.shippingMethod');
+
+        // For order detail items
         $criteria->addAssociation('lineItems');
         $criteria->addAssociation('lineItems.product');
         $criteria->addAssociation('lineItems.product.cover');
+
+        // Optional but safe: in case templates use customer name/email
+        $criteria->addAssociation('orderCustomer');
+
         $criteria->setLimit($limit);
         $criteria->setTotalCountMode(Criteria::TOTAL_COUNT_MODE_EXACT);
 
