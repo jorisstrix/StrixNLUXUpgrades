@@ -14,7 +14,7 @@
 
 3. Sort cart by latest added line item first (merged in v1.3.1)
 
-    - Show the latest added line item first in off-canvas cart and cart page and ort to oldest.
+    - Show the latest added line item first in off-canvas cart and cart page and sort to oldest last.
 
 4. Show the amount of product present in the Product listings (merged in v1.3.1)
     - By default the amount of products present on the product listings in Category pages are shown.
