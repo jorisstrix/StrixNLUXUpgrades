@@ -1,8 +1,7 @@
 {
-    "name": "strix-advanced-c-m-s-extensions/strix-advanced-c-m-s-extensions",
+    "name": "strix/advanced-cms-extensions",
     "description": "Plugin for Advanced CMS Elements",
     "type": "shopware-platform-plugin",
-    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
@@ -16,7 +15,8 @@
         "shopware-plugin-class": "StrixAdvancedCMSExtensions\\StrixAdvancedCMSExtensions",
         "label": {
             "de-DE": "Strix Erweiterte CMS-Erweiterungen",
-            "en-GB": "Strix Advanced CMS Extensions"
+            "en-GB": "Strix Advanced CMS Extensions",
+            "nl-NL": "Strix Geavanceerde CMS-extensies"
         }
     },
     "autoload": {
