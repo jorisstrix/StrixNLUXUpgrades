@@ -1,5 +1,7 @@
-.
+custom/plugins/StrixNLUxUpgrades
 ├── composer.json
+├── custom
+│   └── plugins
 ├── phpunit.xml
 ├── README.md
 ├── src
@@ -48,9 +50,9 @@
 │   │   ├── public
 │   │   │   └── administration
 │   │   │       └── assets
-│   │   │           ├── strix-advanced-c-m-s-extensions-DzN_qEv_.js
-│   │   │           ├── strix-advanced-c-m-s-extensions-DzN_qEv_.js.map
-│   │   │           └── strix-advanced-c-m-s-extensions-LqVPT7H-.css
+│   │   │           ├── strix-n-l-ux-upgrades-B1xdzA78.js
+│   │   │           ├── strix-n-l-ux-upgrades-B1xdzA78.js.map
+│   │   │           └── strix-n-l-ux-upgrades-BKg5JuCq.css
 │   │   ├── snippet
 │   │   │   ├── de-DE.json
 │   │   │   ├── en-GB.json
@@ -59,11 +61,23 @@
 │   │       └── storefront
 │   │           ├── block
 │   │           │   └── cms-block-strix-block-latest-orders.html.twig
-│   │           └── element
-│   │               └── cms-element-strix-latest-orders.html.twig
+│   │           ├── component
+│   │           │   ├── checkout
+│   │           │   │   └── offcanvas-cart.html.twig
+│   │           │   ├── line-item
+│   │           │   │   └── element
+│   │           │   │       └── quantity.html.twig
+│   │           │   └── product
+│   │           │       └── listing.html.twig
+│   │           ├── element
+│   │           │   └── cms-element-strix-latest-orders.html.twig
+│   │           └── page
+│   │               └── checkout
+│   │                   └── cart
+│   │                       └── index.html.twig
 │   └── StrixNLUxUpgrades.php
 ├── structure.txt
 └── tests
     └── TestBootstrap.php
 
-35 directories, 32 files
+45 directories, 36 files
