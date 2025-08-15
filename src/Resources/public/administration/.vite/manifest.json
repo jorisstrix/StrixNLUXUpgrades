@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/strix-advanced-c-m-s-extensions-HaOksjiW.js",
+    "name": "strix-advanced-c-m-s-extensions",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/strix-advanced-c-m-s-extensions-LqVPT7H-.css"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "apps": {
+    "sw-cms": {
+      "detail": {
+        "label": {
+          "blockCategory": {
+            "strix-advanced-cms": "Strix Geavanceerde CMS"
+          }
+        }
+      }
+    }
+  },
+  "sw-cms": {
+    "elements": {
+      "strix-latest-orders": {
+        "label": "Strix: Laatste bestellingen"
+      }
+    },
+    "blocks": {
+      "strix-block-latest-orders": {
+        "label": "Strix: Laatste bestellingen"
+      }
+    }
+  }
+}

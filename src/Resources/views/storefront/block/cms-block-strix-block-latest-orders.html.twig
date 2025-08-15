@@ -1,0 +1,10 @@
+{% block block_strix_block_latest_orders %}
+	<div class="cms-block cms-block-strix-block-latest-orders">
+		{% block block_strix_block_latest_orders_content %}
+			{% set content = block.slots.getSlot('content') %}
+			{% if content %}
+				{% sw_include '@Storefront/storefront/element/cms-element-' ~ content.type ~ '.html.twig' with { element: content } %}
+			{% endif %}
+		{% endblock %}
+	</div>
+{% endblock %}
