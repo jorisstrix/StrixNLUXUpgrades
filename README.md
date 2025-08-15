@@ -24,7 +24,7 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 ## File Structure
 
 ```
-custom/plugins/StrixAdvancedCMSExtensions/
+.
 ├── composer.json
 ├── phpunit.xml
 ├── README.md
@@ -37,7 +37,33 @@ custom/plugins/StrixAdvancedCMSExtensions/
 │   │   ├── app
 │   │   │   └── administration
 │   │   │       ├── build
+│   │   │       │   └── administration.json
 │   │   │       └── src
+│   │   │           ├── asset
+│   │   │           │   └── style
+│   │   │           │       └── strix-cms.scss
+│   │   │           ├── main.js
+│   │   │           ├── module
+│   │   │           │   └── sw-cms
+│   │   │           │       ├── blocks
+│   │   │           │       │   └── strix-advanced-cms
+│   │   │           │       │       └── latest-orders
+│   │   │           │       │           ├── component
+│   │   │           │       │           │   └── sw-cms-block-strix-block-latest-orders.html.twig
+│   │   │           │       │           ├── index.js
+│   │   │           │       │           └── preview
+│   │   │           │       │               └── sw-cms-preview-strix-block-latest-orders.html.twig
+│   │   │           │       └── elements
+│   │   │           │           └── strix-latest-orders
+│   │   │           │               ├── component
+│   │   │           │               │   └── sw-cms-el-strix-latest-orders.html.twig
+│   │   │           │               ├── index.js
+│   │   │           │               └── preview
+│   │   │           │                   └── sw-cms-el-preview-strix-latest-orders.html.twig
+│   │   │           └── snippet
+│   │   │               ├── de-DE.json
+│   │   │               ├── en-GB.json
+│   │   │               └── nl-NL.json
 │   │   ├── config
 │   │   │   ├── config.xml
 │   │   │   ├── plugin.png
@@ -45,6 +71,9 @@ custom/plugins/StrixAdvancedCMSExtensions/
 │   │   ├── public
 │   │   │   └── administration
 │   │   │       └── assets
+│   │   │           ├── strix-advanced-c-m-s-extensions-HaOksjiW.js
+│   │   │           ├── strix-advanced-c-m-s-extensions-HaOksjiW.js.map
+│   │   │           └── strix-advanced-c-m-s-extensions-LqVPT7H-.css
 │   │   ├── snippet
 │   │   │   ├── de-DE.json
 │   │   │   ├── en-GB.json
@@ -52,13 +81,15 @@ custom/plugins/StrixAdvancedCMSExtensions/
 │   │   └── views
 │   │       └── storefront
 │   │           ├── block
+│   │           │   └── cms-block-strix-block-latest-orders.html.twig
 │   │           └── element
+│   │               └── cms-element-strix-latest-orders.html.twig
 │   └── StrixAdvancedCMSExtensions.php
 ├── structure.txt
 └── tests
     └── TestBootstrap.php
 
-20 directories, 13 files
+34 directories, 30 files
 ```
 
 ## Usage
