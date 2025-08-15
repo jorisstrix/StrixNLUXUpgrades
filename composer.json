@@ -1,0 +1,27 @@
+{
+    "name": "strix-advanced-c-m-s-extensions/strix-advanced-c-m-s-extensions",
+    "description": "strix-advanced-c-m-s-extensions/strix-advanced-c-m-s-extensions",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "StrixAdvancedCMSExtensions\\StrixAdvancedCMSExtensions",
+        "label": {
+            "de-DE": "Strix Erweiterte CMS-Erweiterungen",
+            "en-GB": "Strix Advanced CMS Extensions"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "StrixAdvancedCMSExtensions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StrixAdvancedCMSExtensions\\Tests\\": "tests/"
+        }
+    }
+}
