@@ -1,0 +1,39 @@
+{% sw_extends '@Storefront/storefront/component/line-item/element/quantity.html.twig' %}
+
+{% block component_line_item_quantity_select_input %}
+	{% if not config('StrixNLUxUpgrades.config.enable') %}
+		{{ parent() }}
+	{% else %}
+		{% set qi = lineItem.quantityInformation %}
+		{% set maxQuantity = qi.maxPurchase ?: config('core.cart.maxQuantity') %}
+
+		<legend class="form-label visually-hidden">
+			{{ 'component.product.quantitySelect.legend'|trans|striptags }}
+		</legend>
+
+		{% set opts = { ariaLiveUpdateMode: 'onload' } %}
+		<div
+			id="line-item-quantity-group-{{ lineItem.id }}" class="input-group line-item-quantity-group quantity-selector-group" data-quantity-selector="true" data-quantity-selector-options="{{ opts|json_encode }}">
+
+			{# keep minus for JS binding; hide/disable at min #}
+			<button type="button" class="btn btn-outline-light btn-minus js-btn-minus{% if lineItem.quantity == qi.minPurchase %} visually-hidden{% endif %}" {% if lineItem.quantity == qi.minPurchase %} disabled="disabled" aria-hidden="true" tabindex="-1" {% endif %} aria-label="{{ 'component.product.quantitySelect.decreaseOfProduct'|trans({ '%product%': lineItem.label })|striptags }}" data-focus-id="line-item-{{ displayMode }}-quantity-down-{{ lineItem.id }}">
+				{% sw_icon 'minus' style { size: 'xs' } %}
+			</button>
+
+			{# visible trash submit that posts to DELETE route via the SAME outer form #}
+			{% if lineItem.quantity == qi.minPurchase %}
+				<button type="submit" formnovalidate formaction="{{ path('frontend.checkout.line-item.delete', { id: lineItem.id }) }}" class="btn btn-minus btn-outline-light" title="{{ 'checkout.cartItemRemove'|trans|striptags }}" aria-label="{{ 'checkout.cartItemRemove'|trans({ '%product%': lineItem.label })|striptags }}">
+					{% sw_icon 'trash' style { size: 'xs' } %}
+				</button>
+			{% endif %}
+
+			<input type="number" name="quantity" class="form-control js-quantity-selector quantity-selector-group-input quantity-input-{{ lineItem.id }}{% if displayMode === 'offcanvas' %} js-offcanvas-cart-change-quantity-number{% endif %}" min="{{ qi.minPurchase }}" max="{{ maxQuantity }}" step="{{ qi.purchaseSteps }}" value="{{ lineItem.quantity }}" aria-label="{{ 'component.product.quantitySelect.labelWithProduct'|trans({ '%product%': lineItem.label })|striptags }}" data-focus-id="line-item-{{ displayMode }}-quantity-{{ lineItem.id }}"/>
+
+			<button type="button" class="btn btn-outline-light btn-plus js-btn-plus" aria-label="{{ 'component.product.quantitySelect.increaseOfProduct'|trans({ '%product%': lineItem.label })|striptags }}" data-focus-id="line-item-{{ displayMode }}-quantity-up-{{ lineItem.id }}">
+				{% sw_icon 'plus' style { size: 'xs' } %}
+			</button>
+		</div>
+
+		{{ block ('component_line_item_quantity_select_live_area') }}
+	{% endif %}
+{% endblock %}
