@@ -57,6 +57,9 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 │   │   │           │           └── strix-latest-orders
 │   │   │           │               ├── component
 │   │   │           │               │   └── sw-cms-el-strix-latest-orders.html.twig
+│   │   │           │               ├── config
+│   │   │           │               │   ├── index.js
+│   │   │           │               │   └── sw-cms-el-config-strix-latest-orders.html.twig
 │   │   │           │               ├── index.js
 │   │   │           │               └── preview
 │   │   │           │                   └── sw-cms-el-preview-strix-latest-orders.html.twig
@@ -71,8 +74,8 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 │   │   ├── public
 │   │   │   └── administration
 │   │   │       └── assets
-│   │   │           ├── strix-advanced-c-m-s-extensions-HaOksjiW.js
-│   │   │           ├── strix-advanced-c-m-s-extensions-HaOksjiW.js.map
+│   │   │           ├── strix-advanced-c-m-s-extensions-Cxrpl4Za.js
+│   │   │           ├── strix-advanced-c-m-s-extensions-Cxrpl4Za.js.map
 │   │   │           └── strix-advanced-c-m-s-extensions-LqVPT7H-.css
 │   │   ├── snippet
 │   │   │   ├── de-DE.json
@@ -84,12 +87,13 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 │   │           │   └── cms-block-strix-block-latest-orders.html.twig
 │   │           └── element
 │   │               └── cms-element-strix-latest-orders.html.twig
-│   └── StrixAdvancedCMSExtensions.phpd
+│   └── StrixAdvancedCMSExtensions.php
 ├── structure.txt
 └── tests
     └── TestBootstrap.php
 
-34 directories, 30 files
+35 directories, 32 files
+
 ```
 
 ## Usage
