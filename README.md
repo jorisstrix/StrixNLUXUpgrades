@@ -27,12 +27,12 @@
 
 1. Place the plugin in: custom/plugins/StrixNLUxUpgrades
 2. In your project root run:
-   composer require strixnl/uxupgrades
-   bin/console plugin:refresh
-   bin/console plugin:install --activate StrixNLUxUpgrades
-   bin/console cache:clear
-   bin/console administration:build
-   bin/console theme:compile
+    - composer require strixnl/uxupgrades
+    - bin/console plugin:refresh
+    - bin/console plugin:install --activate StrixNLUxUpgrades
+    - bin/console cache:clear
+    - bin/console administration:build
+    - bin/console theme:compile
 
 ## How to use it in the Administration
 
