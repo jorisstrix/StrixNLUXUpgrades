@@ -23,6 +23,7 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 
 ## File Structure
 
+```
 custom/plugins/StrixAdvancedCMSExtensions/
 ├─ composer.json
 ├─ src/
@@ -61,6 +62,7 @@ custom/plugins/StrixAdvancedCMSExtensions/
 │ └─ storefront/
 │ ├─ block/cms-block-strix-block-latest-orders.html.twig
 │ └─ element/cms-element-strix-latest-orders.html.twig
+```
 
 ## Usage
 
