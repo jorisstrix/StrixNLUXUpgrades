@@ -115,18 +115,18 @@ The CMS block appears under a custom category. Provide a label via Administratio
 
 -   Element type: strix-latest-orders
 -   Resolver signature (Shopware 6.7):
-    -   collect(CmsSlotEntity $slot, ResolverContext $resolverContext): ?CriteriaCollection
-    -   enrich(CmsSlotEntity $slot, ResolverContext $resolverContext, ElementDataCollection $result): void
+    -   `collect(CmsSlotEntity $slot, ResolverContext $resolverContext): ?CriteriaCollection`
+    -   `enrich(CmsSlotEntity $slot, ResolverContext $resolverContext, ElementDataCollection $result): void`
 -   Associations loaded:
-    -   transactions.stateMachineState, transactions.paymentMethod
-    -   deliveries.stateMachineState, deliveries.shippingMethod
-    -   lineItems, lineItems.product, lineItems.product.cover
+    -   `transactions.stateMachineState`, `transactions.paymentMethod`
+    -   `deliveries.stateMachineState`, `deliveries.shippingMethod`
+    -   `lineItems`, `lineItems.product`, `lineItems.product.cover`
 -   Total order count:
-    -   Exposed as element.data.totalOrders for use in the link text.
+    -   Exposed as `element.data.totalOrders` for use in the link text.
 
 ## Troubleshooting
 
--   Block selectable but element missing inside block: add storefront block template views/storefront/block/cms-block-<name>.html.twig and include its slot element templates.
--   Admin error Object.keys(undefined): ensure the block uses expanded slots with default.config and the element defines defaultConfig.
--   Order detail route error for deep link: use path('frontend.account.order.single.page', { orderId: order.id, deepLinkCode: order.deepLinkCode }) or fall back to frontend.account.order.page.
--   Missing line items in table: add lineItems and related associations in the resolver criteria.
+-   Block selectable but element missing inside block: add storefront block template `views/storefront/block/cms-block-<name>.html.twig` and include its slot element templates.
+-   Admin error `Object.keys(undefined):` ensure the block uses expanded slots with `default.config` and the element defines `defaultConfig`.
+-   Order detail route error for deep link: `use path('frontend.account.order.single.page', { orderId: order.id, deepLinkCode: order.deepLinkCode })` or fall back to `frontend.account.order.page`.
+-   Missing line items in table: add `lineItems` and related associations in the resolver criteria.
