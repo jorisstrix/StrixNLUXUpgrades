@@ -1,11 +1,18 @@
 {
-    "name": "strix/advanced-cms-extensions",
+    "name": "strixnl/advanced-cms-extensions",
     "description": "Plugin for Advanced CMS Elements",
     "type": "shopware-platform-plugin",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Joris"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jorisstrix/StrixAdvancedCMSExtensions"
         }
     ],
     "require": {
