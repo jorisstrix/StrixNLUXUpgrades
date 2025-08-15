@@ -16,8 +16,8 @@ This plugin adds a CMS element (`strix-latest-orders`) and a CMS block that let 
 -   CMS element `strix-latest-orders`
 -   CMS block under a custom category “Strix Advanced CMS”
 -   Storefront rendering identical to the account overview “Last order” card
--   Link to “All orders” with a translation key
--   Optional total order count next to the link
+-   Link to “All orders” with a translation key and total order count
+-   Element setting to configure the amount of last orders to be shown
 -   Proper admin previews and min-heights
 -   Resolver loads transactions, deliveries, payment/shipping methods, and line items
 
