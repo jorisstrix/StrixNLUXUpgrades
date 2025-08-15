@@ -78,5 +78,4 @@ Storefront:
 ## Notes
 
 -   Default number of orders shown is **3** (configurable in the element settings).
--   No additional CSS/Vue.js/Javascript is used. The Shopware core is preserved
--
+-   No additional CSS, Vue.js, or JavaScript is introduced. The plugin leverages only Twig, PHP, and the Bootstrap framework included with Shopware, ensuring full compatibility with the Shopware core.
