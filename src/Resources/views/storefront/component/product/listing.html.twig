@@ -1,23 +1,26 @@
 {% sw_extends '@Storefront/storefront/component/product/listing.html.twig' %}
 
 {% block element_product_listing_pagination_nav_actions %}
-	<div class="cms-element-product-listing-actions row justify-content-between">
-		<div class="col-md-auto">
-			<p class="results-count">
-				<strong>{{ searchResult.total }}</strong>
-				{{ 'listing.actions.results.label'|trans }}
-			</p>
+	{% if not config('StrixNLUxUpgrades.config.enableListingResultsLabel') %}
+		{{ parent() }}
+	{% else %}
+		<div class="cms-element-product-listing-actions row justify-content-between">
+			<div class="col-md-auto">
+				<p class="results-count">
+					<strong>{{ searchResult.total }}</strong>
+					{{ 'listing.actions.results.label'|trans }}
+				</p>
+			</div>
+			<div class="col-md-auto">
+				{% block element_product_listing_pagination_nav_top %}
+					{{ parent() }}
+				{% endblock %}
+			</div>
+			<div class="col-md-auto">
+				{% block element_product_listing_sorting %}
+					{{ parent() }}
+				{% endblock %}
+			</div>
 		</div>
-		<div class="col-md-auto">
-			{% block element_product_listing_pagination_nav_top %}
-				{{ parent() }}
-			{% endblock %}
-		</div>
-
-		<div class="col-md-auto">
-			{% block element_product_listing_sorting %}
-				{{ parent() }}
-			{% endblock %}
-		</div>
-	</div>
+	{% endif %}
 {% endblock %}

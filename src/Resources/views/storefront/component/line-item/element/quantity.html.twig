@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/line-item/element/quantity.html.twig' %}
 
 {% block component_line_item_quantity_select_input %}
-	{% if not config('StrixNLUxUpgrades.config.enable') %}
+	{% if not config('StrixNLUxUpgrades.config.enableQuantityOverride') %}
 		{{ parent() }}
 	{% else %}
 		{% set qi = lineItem.quantityInformation %}

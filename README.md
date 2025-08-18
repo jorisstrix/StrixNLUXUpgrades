@@ -1,4 +1,4 @@
-# STRIX ADVANCED CMS EXTENSIONS (v1.3.1)
+# STRIX UX Upgrades (v1.3.2)
 
 ## What this plugin does
 
@@ -10,14 +10,14 @@
 
 2. Cart quality-of-life (merged in v1.2.0)
 
-    - Cart items with quantity set to 0 are removed automatically (offcanvas cart + full cart page). Can be activated.
+    - Cart items with quantity set to 0 are removed automatically (offcanvas cart + full cart page). Can be activated in the plugin settings.
 
 3. Sort cart by latest added line item first (merged in v1.3.1)
 
     - Show the latest added line item first in off-canvas cart and cart page and sort to oldest last.
 
 4. Show the amount of product present in the Product listings (merged in v1.3.1)
-    - By default the amount of products present on the product listings in Category pages are shown.
+    - By default the amount of products present on the product listings in Category pages are shown. Can be activated inthe plugin settings.
 
 ## Compatibility
 
@@ -34,7 +34,7 @@
     - bin/console administration:build
     - bin/console theme:compile
 
-## How to use it in the Administration
+## How to use the Latest Orders Element in the Adm
 
 1. Go to: Content → Shopping Experiences.
 2. Create or edit a layout.
