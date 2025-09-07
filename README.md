@@ -1,4 +1,4 @@
-# STRIX UX Upgrades (v1.4.0)
+# STRIX UX Upgrades (v1.4.1)
 
 ## What this plugin does
 
@@ -20,7 +20,8 @@
 
     - By default the amount of products present on the product listings in Category pages are shown. Can be activated in the plugin settings.
 
-5. Feature to show the sum of all discounts in cart/checkout (merged in v1.4.0)
+5. Feature to show the sum of all discounts in cart/checkout (merged in v1.4.1)
+
     - When active the Total line in the cart/checkout summary shows the sum of all items x quantity before discount. A new line in the summary is added called "Discount" (translatable snippet), which is the sum of all line item discounts in the cart. Can be activated in the plugin settings.
 
 ## Compatibility
@@ -83,5 +84,4 @@ Storefront:
 ## Notes
 
 -   Default number of orders shown is **3** (configurable in the element settings).
--   Calculation of the Total and Discount is done in the Twig file → src/Resources/views/storefront/page/checkout/summary.html.twig.
 -   No additional CSS, Vue.js, or JavaScript is introduced. The plugin leverages only Twig, PHP, and the Bootstrap framework included with Shopware, ensuring full compatibility with the Shopware core.

@@ -8,5 +8,8 @@
             <argument type="service" id="order.repository"/>
             <tag name="shopware.cms.data_resolver"/>
         </service>
+        <service id="StrixNLUxUpgrades\Core\Checkout\Cart\Processor\CartDiscountProcessor">
+            <tag name="shopware.cart.processor"/>
+        </service>
     </services>
 </container>

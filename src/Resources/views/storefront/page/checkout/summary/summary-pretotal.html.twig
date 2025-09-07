@@ -1,0 +1,8 @@
+{% block page_checkout_summary_pretotal %}
+	<dt class="col-7 checkout-aside-summary-label">
+		{{ 'checkout.summaryPositionPrice'|trans|sw_sanitize }}
+	</dt>
+	<dd class="col-5 checkout-aside-summary-value">
+		{{ preSubtotal|currency }}
+	</dd>
+{% endblock %}

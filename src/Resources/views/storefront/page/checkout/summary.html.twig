@@ -1,67 +1,51 @@
 {% sw_extends '@Storefront/storefront/page/checkout/summary.html.twig' %}
 
-{# Helper: compute preSubtotal & discountTotal (sum of listPrice reductions) #}
-{% macro _sumListPrice(items) %}
-	{% set preSubtotal = 0 %}
-	{% set discountTotal = 0 %}
-
-	{% for it in items %}
-		{% set qty = it.quantity ?? 1 %}
-		{% set price = it.price ?? null %}
-
-		{% if price %}
-			{% set unit = price.unitPrice ?? 0 %}
-			{% set lp = price.listPrice ?? null %}
-
-			{% if lp and lp.price is defined and lp.price > unit %}
-				{% set preSubtotal = preSubtotal + (lp.price * qty) %}
-				{% set discountTotal = discountTotal + ((lp.price - unit) * qty) %}
-			{% else %}
-				{% set preSubtotal = preSubtotal + (unit * qty) %}
-			{% endif %}
-		{% endif %}
-
-		{% if it.children is defined and it.children|length %}
-			{% set child = _self._sumListPrice(it.children) | json_decode %}
-			{% set preSubtotal = preSubtotal + (child.preSubtotal|default(0)) %}
-			{% set discountTotal = discountTotal + (child.discountTotal|default(0)) %}
-		{% endif %}
-	{% endfor %}
-
-	{{ {'preSubtotal': preSubtotal, 'discountTotal': discountTotal} | json_encode | raw }}
-{% endmacro %}
-
 {% block page_checkout_summary_inner %}
+	{# read values prepared by the CartProcessor #}
+	{% set ext = page.cart.extensions.strix_discount_summary ?? null %}
+	{% set useFeature = config('StrixNLUxUpgrades.config.showCartDiscountSummary') and ext %}
 
-	{# Compute BEFORE includes so overrides can use the values #}
-	{% if config('StrixNLUxUpgrades.config.showCartDiscountSummary') %}
-		{% set items = page.cart.lineItems ?? summary.lineItems ?? [] %}
-		{% set calc = _self._sumListPrice(items) | json_decode %}
-		{% set preSubtotal = calc.preSubtotal|default(0) %}
-		{% set discountTotal = calc.discountTotal|default(0) %}
+	{% if useFeature %}
+		{% set preSubtotal = ext.preSubtotal %}
+		{% set discountTotal = ext.discountTotal %}
 	{% endif %}
 
-	{% sw_include '@Storefront/storefront/page/checkout/summary/summary-position.html.twig' with { 'summary': summary } %}
+	{# --- render rows in the SAME order as core --- #}
 
-	{% if config('StrixNLUxUpgrades.config.showCartDiscountSummary') %}
-		{% sw_include '@StrixNLUxUpgrades/storefront/page/checkout/summary/summary-discount.html.twig' with { discountTotal: discountTotal } %}
-	{% endif %}
-
-	{% sw_include '@Storefront/storefront/page/checkout/summary/summary-shipping.html.twig' with { 'summary': summary } %}
-
-	{% if summary.price.taxStatus == 'gross' %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { 'total': total, 'decimals': decimals } %}
-		{% if displayRounded %}
-			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { 'summary': summary, 'decimals': context.totalRounding.decimals } %}
-		{% endif %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { 'summary': summary } %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { 'summary': summary } %}
+	{# 1) Subtotal BEFORE discount (custom partial) #}
+	{% if useFeature %}
+		{% sw_include '@StrixNLUxUpgrades/storefront/page/checkout/summary/summary-pretotal.html.twig' with {
+            preSubtotal: preSubtotal
+        } %}
 	{% else %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { 'summary': summary } %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { 'summary': summary } %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { 'total': total, 'decimals': decimals } %}
+		{# fall back to core position line #}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-position.html.twig' with { summary: summary } %}
+	{% endif %}
+
+	{# 2) Our Discount row (custom partial) #}
+	{% if useFeature and discountTotal > 0 %}
+		{% sw_include '@StrixNLUxUpgrades/storefront/page/checkout/summary/summary-discount.html.twig' with {
+            discountTotal: discountTotal
+        } %}
+	{% endif %}
+
+	{# 3) Shipping (core) #}
+	{% sw_include '@Storefront/storefront/page/checkout/summary/summary-shipping.html.twig' with { summary: summary } %}
+
+	{# 4) Totals block depending on tax status (core) #}
+	{% if summary.price.taxStatus == 'gross' %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { total: total, decimals: decimals } %}
 		{% if displayRounded %}
-			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { 'summary': summary, 'decimals': context.totalRounding.decimals } %}
+			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { summary: summary, decimals: context.totalRounding.decimals } %}
+		{% endif %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { summary: summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { summary: summary } %}
+	{% else %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { summary: summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { summary: summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { total: total, decimals: decimals } %}
+		{% if displayRounded %}
+			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { summary: summary, decimals: context.totalRounding.decimals } %}
 		{% endif %}
 	{% endif %}
 {% endblock %}
