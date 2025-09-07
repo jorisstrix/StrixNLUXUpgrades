@@ -1,51 +1,41 @@
 {% sw_extends '@Storefront/storefront/page/checkout/summary.html.twig' %}
 
 {% block page_checkout_summary_inner %}
-	{# read values prepared by the CartProcessor #}
-	{% set ext = page.cart.extensions.strix_discount_summary ?? null %}
-	{% set useFeature = config('StrixNLUxUpgrades.config.showCartDiscountSummary') and ext %}
+	{% set discountSummary = page.extensions.strix_discount_summary ?? null %}
 
-	{% if useFeature %}
-		{% set preSubtotal = ext.preSubtotal %}
-		{% set discountTotal = ext.discountTotal %}
-	{% endif %}
-
-	{# --- render rows in the SAME order as core --- #}
-
-	{# 1) Subtotal BEFORE discount (custom partial) #}
-	{% if useFeature %}
+	{# Subtotal before discount as the first row #}
+	{% if discountSummary and discountSummary.preSubtotal > 0 %}
 		{% sw_include '@StrixNLUxUpgrades/storefront/page/checkout/summary/summary-pretotal.html.twig' with {
-            preSubtotal: preSubtotal
+            'preSubtotal': discountSummary.preSubtotal
         } %}
 	{% else %}
-		{# fall back to core position line #}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-position.html.twig' with { summary: summary } %}
+		{# Original Shopware subtotal row #}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-position.html.twig' with { 'summary': summary } %}
 	{% endif %}
 
-	{# 2) Our Discount row (custom partial) #}
-	{% if useFeature and discountTotal > 0 %}
+	{# Discount row, only if discount total is greater than 0 #}
+	{% if discountSummary and discountSummary.discountTotal > 0 %}
 		{% sw_include '@StrixNLUxUpgrades/storefront/page/checkout/summary/summary-discount.html.twig' with {
-            discountTotal: discountTotal
+            'discountTotal': discountSummary.discountTotal
         } %}
 	{% endif %}
 
-	{# 3) Shipping (core) #}
-	{% sw_include '@Storefront/storefront/page/checkout/summary/summary-shipping.html.twig' with { summary: summary } %}
+	{# Rest of Shopware's summary logic remains untouched #}
+	{% sw_include '@Storefront/storefront/page/checkout/summary/summary-shipping.html.twig' with { 'summary': summary } %}
 
-	{# 4) Totals block depending on tax status (core) #}
 	{% if summary.price.taxStatus == 'gross' %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { total: total, decimals: decimals } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { 'total': total, 'decimals': decimals } %}
 		{% if displayRounded %}
-			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { summary: summary, decimals: context.totalRounding.decimals } %}
+			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { 'summary': summary, 'decimals': context.totalRounding.decimals } %}
 		{% endif %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { summary: summary } %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { summary: summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { 'summary': summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { 'summary': summary } %}
 	{% else %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { summary: summary } %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { summary: summary } %}
-		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { total: total, decimals: decimals } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-net.html.twig' with { 'summary': summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-tax.html.twig' with { 'summary': summary } %}
+		{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' with { 'total': total, 'decimals': decimals } %}
 		{% if displayRounded %}
-			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { summary: summary, decimals: context.totalRounding.decimals } %}
+			{% sw_include '@Storefront/storefront/page/checkout/summary/summary-total-rounded.html.twig' with { 'summary': summary, 'decimals': context.totalRounding.decimals } %}
 		{% endif %}
 	{% endif %}
 {% endblock %}
