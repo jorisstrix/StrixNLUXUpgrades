@@ -1,4 +1,4 @@
-# STRIX UX Upgrades (v1.3.2)
+# STRIX UX Upgrades (v1.4.0)
 
 ## What this plugin does
 
@@ -17,7 +17,11 @@
     - Show the latest added line item first in off-canvas cart and cart page and sort to oldest last.
 
 4. Show the amount of product present in the Product listings (merged in v1.3.1)
-    - By default the amount of products present on the product listings in Category pages are shown. Can be activated inthe plugin settings.
+
+    - By default the amount of products present on the product listings in Category pages are shown. Can be activated in the plugin settings.
+
+5. Feature to show the sum of all discounts in cart/checkout (merged in v1.4.0)
+    - When active the Total line in the cart/checkout summary shows the sum of all items x quantity before discount. A new line in the summary is added called "Discount" (translatable snippet), which is the sum of all line item discounts in the cart. Can be activated in the plugin settings.
 
 ## Compatibility
 
@@ -34,7 +38,7 @@
     - bin/console administration:build
     - bin/console theme:compile
 
-## How to use the Latest Orders Element in the Adm
+## How to use the Latest Orders Element in the Admin
 
 1. Go to: Content → Shopping Experiences.
 2. Create or edit a layout.
@@ -63,6 +67,7 @@ Administration (block picker & labels):
 Storefront:
 
 -   strix.account.ShowAllOrders → “Show all orders”
+-   strix.cart.discountTotal → "Discount"
 -   listing.actions.results.label → “results“
 
 ## Troubleshooting (quick)
@@ -78,4 +83,5 @@ Storefront:
 ## Notes
 
 -   Default number of orders shown is **3** (configurable in the element settings).
+-   Calculation of the Total and Discount is done in the Twig file → src/Resources/views/storefront/page/checkout/summary.html.twig.
 -   No additional CSS, Vue.js, or JavaScript is introduced. The plugin leverages only Twig, PHP, and the Bootstrap framework included with Shopware, ensuring full compatibility with the Shopware core.

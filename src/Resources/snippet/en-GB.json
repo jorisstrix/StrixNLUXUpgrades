@@ -2,6 +2,9 @@
   "strix": {
     "account": {
       "ShowAllOrders": "Show all orders"
+    },
+    "cart": {
+      "discountTotal": "Discount"
     }
   },
   "listing": {
