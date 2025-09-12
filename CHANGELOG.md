@@ -25,3 +25,12 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/summary.html.twig`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/summary/summary-pretotal.html.twig`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/summary/summary-discount.html.twig`
+### 2025-09-12 17:31 — 9acb56c8
+- Add feature to show discount in cart summary
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/cart-flyout/cart-flyout.plugin.js`
+
