@@ -46,3 +46,10 @@
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/nl-NL.json`
 - `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
 
+### 2025-09-23 09:59 — 418d69a1
+- Add discount as line item to order
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/de-DE.json`
+
