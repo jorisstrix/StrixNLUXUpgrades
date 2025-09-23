@@ -16,5 +16,13 @@
         <service id="StrixNLUxUpgrades\Storefront\Page\Checkout\UnifiedDiscountSummarySubscriber" public="true">
             <tag name="kernel.event_subscriber"/>
         </service>
+
+        <!-- Order subscriber for adding discount line items after order creation -->
+        <service id="StrixNLUxUpgrades\Core\Checkout\Order\DiscountOrderSubscriber">
+            <argument type="service" id="order.repository"/>
+            <argument type="service" id="order_line_item.repository"/>
+            <argument type="service" id="Shopware\Core\System\Snippet\SnippetService"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
     </services>
 </container>

@@ -7,9 +7,15 @@ use Shopware\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\Framework\Struct\ArrayStruct;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
 {
+    public function __construct(
+        private readonly TranslatorInterface $translator
+    ) {
+    }
+
     public static function getSubscribedEvents(): array
     {
         return [
@@ -21,7 +27,9 @@ class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
 
     public function onCartOrConfirmOrFinish($event): void
     {
-        $lineItems = [];
+        $discountLabel = 'Product Discount';
+
+        $lineItems = null;
 
         if ($event instanceof CheckoutCartPageLoadedEvent || $event instanceof CheckoutConfirmPageLoadedEvent) {
             $lineItems = $event->getPage()->getCart()->getLineItems();
@@ -29,9 +37,11 @@ class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
 
         if ($event instanceof CheckoutFinishPageLoadedEvent) {
             $lineItems = $event->getPage()->getOrder()->getLineItems();
+            $filteredLineItems = $lineItems->filter(fn ($lineItem) => !($lineItem->getType() === 'custom' && $lineItem->getLabel() === $discountLabel));
+            $event->getPage()->getOrder()->setLineItems($filteredLineItems);
         }
 
-        if (empty($lineItems)) {
+        if ($lineItems === null || $lineItems->count() === 0) {
             return;
         }
 
@@ -39,6 +49,10 @@ class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
         $discountTotal = 0.0;
 
         foreach ($lineItems as $lineItem) {
+            if ($lineItem->getType() === 'custom' && $lineItem->getLabel() === $discountLabel) {
+                continue;
+            }
+
             $price = $lineItem->getPrice();
             if (!$price) {
                 continue;
