@@ -5,14 +5,18 @@ namespace StrixNLUxUpgrades\Storefront\Page\Checkout;
 use Shopware\Storefront\Page\Checkout\Cart\CheckoutCartPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoadedEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Shopware\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoadedEvent;
+use Shopware\Core\Checkout\Cart\LineItem\LineItemCollection;
 use Shopware\Core\Framework\Struct\ArrayStruct;
-use Symfony\Contracts\Translation\TranslatorInterface;
+use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
+final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
 {
+    private const CONFIG_KEY = 'StrixNLUxUpgrades.config.showCartDiscountSummary';
+
     public function __construct(
-        private readonly TranslatorInterface $translator
+        private readonly SystemConfigService $systemConfigService
     ) {
     }
 
@@ -22,43 +26,65 @@ class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
             CheckoutCartPageLoadedEvent::class => 'onCartOrConfirmOrFinish',
             CheckoutConfirmPageLoadedEvent::class => 'onCartOrConfirmOrFinish',
             CheckoutFinishPageLoadedEvent::class => 'onCartOrConfirmOrFinish',
+            CheckoutRegisterPageLoadedEvent::class => 'onCartOrConfirmOrFinish',
         ];
     }
 
-    public function onCartOrConfirmOrFinish($event): void
+    public function onCartOrConfirmOrFinish(object $event): void
     {
-        $discountLabel = 'Product Discount';
-
-        $lineItems = null;
-
-        if ($event instanceof CheckoutCartPageLoadedEvent || $event instanceof CheckoutConfirmPageLoadedEvent) {
-            $lineItems = $event->getPage()->getCart()->getLineItems();
-        }
-
-        if ($event instanceof CheckoutFinishPageLoadedEvent) {
-            $lineItems = $event->getPage()->getOrder()->getLineItems();
-            $filteredLineItems = $lineItems->filter(fn ($lineItem) => !($lineItem->getType() === 'custom' && $lineItem->getLabel() === $discountLabel));
-            $event->getPage()->getOrder()->setLineItems($filteredLineItems);
-        }
-
-        if ($lineItems === null || $lineItems->count() === 0) {
+        $salesChannelId = $event->getSalesChannelContext()->getSalesChannelId();
+        if (!(bool) $this->systemConfigService->get(self::CONFIG_KEY, $salesChannelId)) {
             return;
         }
 
+        $lineItems = $this->resolveLineItems($event);
+        if (!$lineItems || $lineItems->count() === 0) {
+            return;
+        }
+
+        if ($event instanceof CheckoutFinishPageLoadedEvent) {
+            $filtered = $lineItems->filter(fn ($li) => !($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false)));
+            $event->getPage()->getOrder()->setLineItems($filtered);
+            $lineItems = $filtered;
+        }
+
+        [$preSubtotal, $discountTotal] = $this->calculateTotals($lineItems);
+
+        $event->getPage()->addExtension('strix_discount_summary', new ArrayStruct([
+            'preSubtotal' => $preSubtotal,
+            'discountTotal' => $discountTotal,
+        ]));
+    }
+
+    private function resolveLineItems(object $event): ?LineItemCollection
+    {
+        if ($event instanceof CheckoutCartPageLoadedEvent || $event instanceof CheckoutConfirmPageLoadedEvent || $event instanceof CheckoutRegisterPageLoadedEvent) {
+            return $event->getPage()->getCart()->getLineItems();
+        }
+
+        if ($event instanceof CheckoutFinishPageLoadedEvent) {
+            return $event->getPage()->getOrder()->getLineItems();
+        }
+
+        return null;
+    }
+
+    private function calculateTotals(LineItemCollection $items): array
+    {
         $preSubtotal = 0.0;
         $discountTotal = 0.0;
 
-        foreach ($lineItems as $lineItem) {
-            if ($lineItem->getType() === 'custom' && $lineItem->getLabel() === $discountLabel) {
+        foreach ($items as $li) {
+            if ($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false)) {
                 continue;
             }
 
-            $price = $lineItem->getPrice();
+            $price = $li->getPrice();
             if (!$price) {
                 continue;
             }
 
-            $qty = $lineItem->getQuantity();
+            $qty = $li->getQuantity();
             $unitPrice = $price->getUnitPrice();
             $listPrice = $price->getListPrice()?->getPrice();
 
@@ -70,9 +96,6 @@ class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
             }
         }
 
-        $event->getPage()->addExtension('strix_discount_summary', new ArrayStruct([
-            'preSubtotal' => $preSubtotal,
-            'discountTotal' => $discountTotal,
-        ]));
+        return [$preSubtotal, $discountTotal];
     }
 }

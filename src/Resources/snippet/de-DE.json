@@ -4,8 +4,7 @@
       "ShowAllOrders": "Alle Bestellungen anzeigen"
     },
     "cart": {
-      "discountTotal": "Rabatt",
-      "productDiscountLabel": "Produkt Rabatt"
+      "discountTotal": "Rabatt"
     }
   },
   "listing": {

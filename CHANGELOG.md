@@ -35,21 +35,14 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/cart-flyout/cart-flyout.plugin.js`
-### 2025-09-23 09:58 — e979b615
-- Fix issue with with remove item at off-canvas
-
-**Changed files:**
-
-- `custom/plugins/StrixNLUxUpgrades/src/Core/Checkout/Order/DiscountOrderSubscriber.php`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/en-GB.json`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/nl-NL.json`
-- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
-
-### 2025-09-23 09:59 — 418d69a1
+### 2025-09-23 16:32 — 07abef97
 - Add discount as line item to order
 
 **Changed files:**
 
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/de-DE.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/en-GB.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/nl-NL.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
 

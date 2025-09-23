@@ -4,8 +4,7 @@
       "ShowAllOrders": "Bekijk alle bestellingen"
     },
     "cart": {
-      "discountTotal": "Korting",
-      "productDiscountLabel": "Productkorting"
+      "discountTotal": "Korting"
     }
   },
   "listing": {
