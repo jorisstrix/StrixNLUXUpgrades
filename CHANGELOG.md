@@ -38,7 +38,7 @@
 
 ### 2025-09-23 16:32 — 07abef97
 
--   dded discount in summary to checkout/register
+-   Add discount in summary to checkout/register
 
 **Changed files:**
 
