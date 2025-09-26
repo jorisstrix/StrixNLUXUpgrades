@@ -72,15 +72,6 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
 
-### 2025-09-26 15:54 — 279cb33b
-
--   Added label to language selector
-
-**Changed files:**
-
--   `custom/plugins/StrixNLUxUpgrades/README.md`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
-
 ### 2025-09-26 17:32 — 11a58ee7
 
 -   Added label to language selector
