@@ -60,3 +60,12 @@
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
 - `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/FooterLanguageDataSubscriber.php`
 
+### 2025-09-26 15:53 — 7e049825
+- Added Language selector into footer
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/README.md`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
+

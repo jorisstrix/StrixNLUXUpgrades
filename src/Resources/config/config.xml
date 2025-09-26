@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
 
     <card>
-        <title>Show amount of products found in listing</title>
+        <title>Product listing</title>
         <input-field type="bool">
             <name>enableListingResultsLabel</name>
             <label>Enable product count display in listing</label>

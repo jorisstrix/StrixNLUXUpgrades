@@ -61,9 +61,9 @@
 -   On the same row as the sorting options, the amount of products found on the listing are shown.
 -   Everyrthing seen on the storefront is translatable by a (new) snippet.
 
-## Translations (keys to provide)
+## Translations with default values
 
-Administration (block picker & labels):
+Administration:
 
 -   sw-cms.detail.label.blockCategory.strix-advanced-cms → “Strix Advanced CMS”
 -   sw-cms.elements.strix-latest-orders.label → “Strix: Latest Orders”
@@ -74,6 +74,7 @@ Storefront:
 -   strix.account.ShowAllOrders → “Show all orders”
 -   strix.cart.discountTotal → "Discount"
 -   listing.actions.results.label → “results“
+-   footer.languageList → “Available languages”
 
 ## Troubleshooting (quick)
 
