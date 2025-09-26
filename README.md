@@ -1,4 +1,4 @@
-# STRIX UX Upgrades (v1.5.0)
+# STRIX UX Upgrades (v1.5.1)
 
 ## What this plugin does
 
