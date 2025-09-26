@@ -1,0 +1,48 @@
+{% block layout_footer_language_widget %}
+	{% if header %}
+		{% set hasMultipleLanguages = header.languages.count > 1 %}
+		{% if hasMultipleLanguages %}
+			<form method="post" action="{{ path('frontend.checkout.switch-language') }}" class="language-form" data-form-add-dynamic-redirect="true">
+				{% set isoCode = context.languageInfo.localeCode|lower|split('-') %}
+				{% set language = isoCode[0] %}
+				{% set country = isoCode[1] %}
+
+				<div class="languages-menu dropdown">
+					<button class="btn dropdown-toggle footer-language-btn" type="button" id="footerLanguagesDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ 'header.languageTrigger'|trans({ '%lang%': context.languageInfo.name })|striptags }}">
+						<span aria-hidden="true" class="footer-language-icon language-flag country-{{ country }} language-{{ language }}"></span>
+						<span class="footer-language-text">{{ context.languageInfo.name }}</span>
+					</button>
+
+					<ul class="dropdown-menu dropdown-menu-end footer-language-menu" aria-label="{{ 'header.languageList'|trans|striptags }}">
+						{% for language in header.languages %}
+							{% set isActiveLanguage = language.id is same as(context.context.languageId) %}
+							{% set isoCode = language.translationCode.code|lower|split('-') %}
+							{% set flagLanguage = isoCode[0] %}
+							{% set flagCountry = isoCode[1] %}
+
+							<li>
+								<button class="dropdown-item d-flex align-items-center gap-2{% if isActiveLanguage %} active{% endif %}" type="submit" name="languageId" value="{{ language.id }}">
+									<span aria-hidden="true" class="footer-language-icon language-flag country-{{ flagCountry }} language-{{ flagLanguage }}"></span>
+									{{ language.name }}
+								</button>
+
+								{% if app.request.attributes.get('_route_params')['_locale'] %}
+									<input type="hidden" name="languageCode_{{ language.id }}" value="{{ language.translationCode.code }}">
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</form>
+		{% else %}
+			<div class="footer-language-info">
+				<span class="footer-language-text">{{ context.languageInfo.name }}</span>
+				<small class="text-muted d-block">
+					({{ header.languages.count }}
+					language{{ header.languages.count > 1 ? 's' : '' }}
+					available)
+				</small>
+			</div>
+		{% endif %}
+	{% endif %}
+{% endblock %}

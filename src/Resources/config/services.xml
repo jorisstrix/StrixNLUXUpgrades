@@ -13,7 +13,14 @@
         </service>
 
         <!-- Subscriber for unified discount summary -->
-        <service id="StrixNLUxUpgrades\Storefront\Page\Checkout\UnifiedDiscountSummarySubscriber" public="true">
+        <service id="StrixNLUxUpgrades\Storefront\Page\Checkout\UnifiedDiscountSummarySubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <!-- Subscriber for footer language -->
+        <service id="StrixNLUxUpgrades\Storefront\Page\FooterLanguageDataSubscriber">
+            <argument type="service" id="Shopware\Storefront\Pagelet\Header\HeaderPageletLoader"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
             <tag name="kernel.event_subscriber"/>
         </service>
 

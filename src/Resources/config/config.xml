@@ -8,6 +8,7 @@
             <name>enableListingResultsLabel</name>
             <label>Enable product count display in listing</label>
             <defaultValue>true</defaultValue>
+            <scope>sales-channel</scope>
         </input-field>
     </card>
 
@@ -17,11 +18,22 @@
             <name>enableQuantityOverride</name>
             <label>Enable zero-quantity remove (quantity input override)</label>
             <defaultValue>true</defaultValue>
+            <scope>sales-channel</scope>
         </input-field>
 
         <input-field type="bool">
             <name>showCartDiscountSummary</name>
             <label>Show discount in cart &amp; checkout summary</label>
+            <defaultValue>true</defaultValue>
+            <scope>sales-channel</scope>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Footer</title>
+        <input-field type="bool">
+            <name>showFooterLanguageSelector</name>
+            <label>Show language selector in footer</label>
             <defaultValue>true</defaultValue>
             <scope>sales-channel</scope>
         </input-field>

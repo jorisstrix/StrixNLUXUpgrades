@@ -1,4 +1,4 @@
-# STRIX UX Upgrades (v1.4.1)
+# STRIX UX Upgrades (v1.5.0)
 
 ## What this plugin does
 
@@ -23,6 +23,10 @@
 5. Feature to show the sum of all discounts in cart/checkout (merged in v1.4.1)
 
     - When active the Total line in the cart/checkout summary shows the sum of all items x quantity before discount. A new line in the summary is added called "Discount" (translatable snippet), which is the sum of all line item discounts in the cart. Can be activated in the plugin settings.
+
+6. Feature to show the language selector in the footer (merged in v1.5.0)
+
+    - When active the language selector is shown in the footer. Can be activated in the plugin settings.
 
 ## Compatibility
 
