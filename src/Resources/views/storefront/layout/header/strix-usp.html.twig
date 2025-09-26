@@ -21,7 +21,7 @@
 	{% if items|length > 0 %}
 		<div class="bg-light border-bottom">
 			<div class="container">
-				<ul class="list-unstyled d-flex w-100 align-items-center justify-content-center m-0 py-2" data-plugin="UspRotator" data-interval="{{ uspInterval }}" data-duration="{{ uspDuration }}" data-lg-breakpoint="768">
+				<ul class="list-unstyled d-flex w-100 align-items-center justify-content-center m-0 py-2" data-plugin="UspRotator" data-interval="{{ uspInterval }}" data-duration="{{ uspDuration }}" data-md-breakpoint="768">
 					{% for text in items %}
 						<li class="flex-fill text-center small" data-usp-item>{{ text }}</li>
 					{% endfor %}
