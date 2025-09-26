@@ -1,4 +1,4 @@
-# STRIX UX Upgrades (v1.5.1)
+# STRIX UX Upgrades (v1.6.0)
 
 ## What this plugin does
 
@@ -27,6 +27,14 @@
 6. Feature to show the language selector in the footer (merged in v1.5.0)
 
     - When active the language selector is shown in the footer. Can be activated in the plugin settings.
+
+7. Feature to show the USP bar above the header (merged in v1.6.0)
+
+    - When active the USP bar is shown above the header. Can be activated in the plugin settings.
+    - The duration and interval of the USP bar can be configured in the plugin settings.
+    - The USP bar is a carousel that shows up to 3 USPs (default) and can be configured in the plugin settings.
+    - The USP bar is responsive and will show 1 USP on mobile at a breakpoint of 768px (default).
+    - The USP bar is translatable.
 
 ## Compatibility
 
@@ -59,7 +67,7 @@
 -   If the visitor is not logged in or has no orders, the element does not render (no empty box).
 -   In the cart, changing an item’s quantity to **0** removes it immediately (no manual refresh required).
 -   On the same row as the sorting options, the amount of products found on the listing are shown.
--   Everyrthing seen on the storefront is translatable by a (new) snippet.
+-   Everything seen on the storefront is translatable by a (new) snippet.
 
 ## Translations with default values
 

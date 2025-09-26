@@ -2,6 +2,61 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
 
+<card>
+    <title>USP Bar</title>
+
+    <input-field type="bool">
+        <name>uspBarEnabled</name>
+        <label>Show USP bar above header</label>
+        <defaultValue>true</defaultValue>
+        <scope>sales-channel</scope>
+    </input-field>
+
+    <input-field type="text">
+        <name>uspText1</name>
+        <label>USP #1</label>
+        <placeholder>Free shipping over €50</placeholder>
+        <scope>sales-channel</scope>
+    </input-field>
+
+    <input-field type="text">
+        <name>uspText2</name>
+        <label>USP #2</label>
+        <placeholder>30-day returns</placeholder>
+        <scope>sales-channel</scope>
+    </input-field>
+
+    <input-field type="text">
+        <name>uspText3</name>
+        <label>USP #3</label>
+        <placeholder>Support 7 days a week</placeholder>
+        <scope>sales-channel</scope>
+    </input-field>
+
+    <input-field type="int">
+        <name>uspInterval</name>
+        <label>Carousel hold time (ms)</label>
+        <placeholder>4000</placeholder>
+        <helpText>
+            Time each USP stays fully visible before sliding to the next (in milliseconds).
+            Leave blank to use the default of 4000 ms.
+        </helpText>
+        <scope>sales-channel</scope>
+    </input-field>
+
+    <input-field type="int">
+        <name>uspDuration</name>
+        <label>Carousel slide duration (ms)</label>
+        <placeholder>1200</placeholder>
+        <helpText>
+            Duration of the slide animation between USPs (in milliseconds).
+            Leave blank to use the default of 1200 ms. Total cycle per USP = hold time + slide duration.
+        </helpText>
+        <scope>sales-channel</scope>
+    </input-field>
+</card>
+
+
     <card>
         <title>Product listing</title>
         <input-field type="bool">

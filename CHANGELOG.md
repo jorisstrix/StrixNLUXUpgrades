@@ -80,3 +80,16 @@
 
 -   `custom/plugins/StrixNLUxUpgrades/README.md`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
+### 2025-09-26 17:32 — 11a58ee7
+- Added label to language selector
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/README.md`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/usp-rotator/usp-rotator.plugin.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/base.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/header/strix-usp.html.twig`
+
