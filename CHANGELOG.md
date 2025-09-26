@@ -8,6 +8,7 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/component/line-item/element/quantity.html.twig`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/component/product/listing.html.twig`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
 
 ### 2025-09-07 — 38a60471
 
@@ -32,25 +33,8 @@
 
 **Changed files:**
 
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/cart-flyout/cart-flyout.plugin.js`
-
-### 2025-09-23 16:32 — 07abef97
-
--   Add discount in summary to checkout/register
-
-**Changed files:**
-
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/de-DE.json`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/en-GB.json`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/nl-NL.json`
--   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
--   `custom/plugins/StrixNLUxUpgrades/README.md`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
 
 ### 2025-09-26 15:53 — 7e049825
 
