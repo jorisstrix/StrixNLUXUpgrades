@@ -7,6 +7,7 @@
     - Adds a CMS element `strix-latest-orders` and a block you can place anywhere in Shopping Experiences.
     - Renders the same “Last order” card as on the My Account overview, with the addition to show more then 1.
     - Only renders for logged-in customers (nothing is shown to guests or customers without orders).
+    - The number of orders to show can be configured in the plugin settings.
 
 2. Cart quality-of-life (merged in v1.2.0)
 

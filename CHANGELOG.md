@@ -93,3 +93,10 @@
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/base.html.twig`
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/header/strix-usp.html.twig`
 
+### 2025-09-26 17:34 — aa8a1341
+- Added configurable USP bar with animation
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/README.md`
+
