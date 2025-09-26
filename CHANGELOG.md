@@ -47,20 +47,10 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/en-GB.json`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/nl-NL.json`
 -   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
-
-### 2025-09-26 15:30 — 0a866bd1
-
--   Added discount in summary to checkout/register
-
-**Changed files:**
-
 -   `custom/plugins/StrixNLUxUpgrades/README.md`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer-language-widget.html.twig`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
--   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/FooterLanguageDataSubscriber.php`
 
 ### 2025-09-26 15:53 — 7e049825
 
@@ -71,6 +61,7 @@
 -   `custom/plugins/StrixNLUxUpgrades/README.md`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
+-   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/FooterLanguageDataSubscriber.php`
 
 ### 2025-09-26 17:32 — 11a58ee7
 
@@ -78,13 +69,7 @@
 
 **Changed files:**
 
--   `custom/plugins/StrixNLUxUpgrades/README.md`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/usp-rotator/usp-rotator.plugin.js`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/base.html.twig`
--   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/header/strix-usp.html.twig`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
 
 ### 2025-09-26 17:34 — aa8a1341
 
