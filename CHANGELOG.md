@@ -47,32 +47,36 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/en-GB.json`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/snippet/nl-NL.json`
 -   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
+
 ### 2025-09-26 15:30 — 0a866bd1
-- Added discount in summary to checkout/register
+
+-   Added discount in summary to checkout/register
 
 **Changed files:**
 
-- `custom/plugins/StrixNLUxUpgrades/README.md`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer-language-widget.html.twig`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
-- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/FooterLanguageDataSubscriber.php`
+-   `custom/plugins/StrixNLUxUpgrades/README.md`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer-language-widget.html.twig`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
+-   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/FooterLanguageDataSubscriber.php`
 
 ### 2025-09-26 15:53 — 7e049825
-- Added Language selector into footer
+
+-   Added Language selector into footer
 
 **Changed files:**
 
-- `custom/plugins/StrixNLUxUpgrades/README.md`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
-- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
+-   `custom/plugins/StrixNLUxUpgrades/README.md`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
 
 ### 2025-09-26 15:54 — 279cb33b
-- Added label to language selector
+
+-   Added label to language selector
 
 **Changed files:**
 
-- `custom/plugins/StrixNLUxUpgrades/README.md`
-
+-   `custom/plugins/StrixNLUxUpgrades/README.md`
+-   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
