@@ -15,11 +15,11 @@
 		{% set items = items|merge([u3]) %}
 	{% endif %}
 
-	{% set uspInterval = (config('StrixNLUxUpgrades.config.uspInterval') ?? 4000)|intval %}
+	{% set uspInterval = (config('StrixNLUxUpgrades.config.uspInterval') ?? 2800)|intval %}
 	{% set uspDuration = (config('StrixNLUxUpgrades.config.uspDuration') ?? 1200)|intval %}
 
 	{% if items|length > 0 %}
-		<div class="bg-light border-bottom">
+		<div class="bg-body-secondary border-bottom mb-lg-3">
 			<div class="container">
 				<ul class="list-unstyled d-flex w-100 align-items-center justify-content-center m-0 py-2" data-plugin="UspRotator" data-interval="{{ uspInterval }}" data-duration="{{ uspDuration }}" data-md-breakpoint="768">
 					{% for text in items %}

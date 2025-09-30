@@ -8,7 +8,7 @@ export default class UspRotatorPlugin extends Plugin {
 
         this.interval = Math.max(
             200,
-            parseInt(this.el.dataset.interval || "4000", 10)
+            parseInt(this.el.dataset.interval || "2800", 10)
         );
         this.duration = Math.max(
             120,

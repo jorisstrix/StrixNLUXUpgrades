@@ -1,0 +1,32 @@
+/* Sticky header utilities */
+.strix-sticky-fixed {
+  position: fixed;
+  top: 0;
+  left: var(--strix-left, 0);
+  width: var(--strix-width, 100%);
+  right: auto;
+  z-index: 1040;
+}
+
+.strix-sticky-spacer {
+  display: none;
+  height: var(--strix-height, 0);
+}
+.strix-sticky-spacer.is-visible {
+  display: block;
+}
+
+.strix-sticky-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--strix-height, 0);
+  background-color: var(--bs-tertiary-bg);
+  pointer-events: none;
+  z-index: 1039;
+  display: none;
+}
+.strix-sticky-bg.is-visible {
+  display: block;
+}

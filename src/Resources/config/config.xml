@@ -36,10 +36,10 @@
     <input-field type="int">
         <name>uspInterval</name>
         <label>Carousel hold time (ms)</label>
-        <placeholder>4000</placeholder>
+        <placeholder>2800</placeholder>
         <helpText>
             Time each USP stays fully visible before sliding to the next (in milliseconds).
-            Leave blank to use the default of 4000 ms.
+            Leave blank to use the default of 2800 ms.
         </helpText>
         <scope>sales-channel</scope>
     </input-field>
@@ -56,6 +56,15 @@
     </input-field>
 </card>
 
+<card>
+    <title>Header</title>
+    <input-field type="bool">
+        <name>stickyHeaderEnabled</name>
+        <label>Use sticky header</label>
+        <defaultValue>true</defaultValue>
+        <scope>sales-channel</scope>
+    </input-field>
+</card>
 
     <card>
         <title>Product listing</title>
