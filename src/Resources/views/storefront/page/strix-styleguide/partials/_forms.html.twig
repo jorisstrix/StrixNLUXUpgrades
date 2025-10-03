@@ -1,0 +1,182 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_forms.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Forms') }}
+
+<div
+	class="row g-4">
+
+	{# ---------- Basics (includes SINGLE TEXT INPUT) ---------- #}
+	<div class="col-lg-6">
+		<div class="small text-muted text-uppercase mb-2">Basics</div>
+
+		{# Single text input (plain) #}
+		<div class="mb-3">
+			<label for="sgText" class="form-label">Text</label>
+			<input id="sgText" type="text" class="form-control" placeholder="Type something…">
+		</div>
+
+		<div class="mb-3">
+			<label for="sgEmail" class="form-label">Email</label>
+			<input id="sgEmail" type="email" class="form-control" placeholder="name@example.com">
+			<div class="form-text">We’ll never share your email.</div>
+		</div>
+
+		<div class="mb-3">
+			<label for="sgPassword" class="form-label">Password</label>
+			<input id="sgPassword" type="password" class="form-control" value="hunter2">
+		</div>
+
+		<div class="mb-3">
+			<label for="sgTextarea" class="form-label">Textarea</label>
+			<textarea id="sgTextarea" class="form-control" rows="3" placeholder="Write your message…"></textarea>
+		</div>
+
+		<div class="row g-3">
+			<div class="col-sm-6">
+				<label for="sgSelect" class="form-label">Select</label>
+				<select id="sgSelect" class="form-select">
+					<option>Choose…</option>
+					<option>One</option>
+					<option>Two</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label for="sgRange" class="form-label">Range</label>
+				<input id="sgRange" type="range" class="form-range">
+			</div>
+		</div>
+	</div>
+
+	{# ---------- Options & Validation (includes DISABLED CHECKBOX) ---------- #}
+	<div class="col-lg-6">
+		<div class="small text-muted text-uppercase mb-2">Options</div>
+
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="sgCheck1" checked>
+			<label class="form-check-label" for="sgCheck1">Checkbox (checked)</label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="sgCheck2">
+			<label class="form-check-label" for="sgCheck2">Checkbox</label>
+		</div>
+		{# Disabled checkbox #}
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="sgCheckDisabled" disabled>
+			<label class="form-check-label" for="sgCheckDisabled">Checkbox (disabled)</label>
+		</div>
+
+		<div class="mt-2">
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="sgRadios" id="sgRadio1" checked>
+				<label class="form-check-label" for="sgRadio1">Radio 1</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="sgRadios" id="sgRadio2">
+				<label class="form-check-label" for="sgRadio2">Radio 2</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="sgRadios" id="sgRadio3" disabled>
+				<label class="form-check-label" for="sgRadio3">Radio (disabled)</label>
+			</div>
+		</div>
+
+		<div class="form-check form-switch mt-2">
+			<input class="form-check-input" type="checkbox" id="sgSwitch" checked>
+			<label class="form-check-label" for="sgSwitch">Switch</label>
+		</div>
+
+		<div class="small text-muted text-uppercase mt-3 mb-2">Validation (static)</div>
+		<div class="mb-2">
+			<label class="form-label" for="sgValid">Valid input</label>
+			<input id="sgValid" class="form-control is-valid" value="Looks good!">
+			<div class="valid-feedback">Success message.</div>
+		</div>
+		<div>
+			<label class="form-label" for="sgInvalid">Invalid input</label>
+			<input id="sgInvalid" class="form-control is-invalid" value="Oops">
+			<div class="invalid-feedback">Please provide a valid value.</div>
+		</div>
+	</div>
+
+	{# ---------- Input groups (includes QUANTITY SELECTOR) ---------- #}
+	<div class="col-lg-6">
+		<div class="small text-muted text-uppercase mb-2">Input groups</div>
+
+		<div class="input-group mb-2">
+			<span class="input-group-text">@</span>
+			<input type="text" class="form-control" placeholder="username">
+		</div>
+
+		<div class="input-group mb-2">
+			<input type="text" class="form-control" placeholder="Recipient's username">
+			<button class="btn btn-outline-secondary" type="button">Send</button>
+		</div>
+
+		<div class="input-group mb-3">
+			<span class="input-group-text">€</span>
+			<input type="number" class="form-control" value="49.90" step="0.01">
+			<span class="input-group-text">EUR</span>
+		</div>
+
+		{# Quantity selector (Shopware-style classes, no custom styling) #}
+		<fieldset>
+			<legend class="form-label visually-hidden">
+				Product Quantity: Enter the desired amount or use the buttons to increase or decrease the quantity.
+			</legend>
+
+			<div class="input-group line-item-quantity-group quantity-selector-group" data-quantity-selector="true">
+				<button type="button" class="btn btn-outline-light btn-minus js-btn-minus" aria-label="Decrease quantity">
+					{% sw_icon 'minus' %}
+				</button>
+
+				<input type="number" name="quantity" class="form-control js-quantity-selector quantity-selector-group-input" min="1" max="100" step="1" value="2" aria-label="Quantity">
+
+				<button type="button" class="btn btn-outline-light btn-plus js-btn-plus" aria-label="Increase quantity">
+					{% sw_icon 'plus' %}
+				</button>
+			</div>
+
+			<div class="quantity-area-live visually-hidden" aria-live="polite" aria-atomic="true" data-aria-live-text="Quantity set to %quantity%."></div>
+		</fieldset>
+
+		<div class="small text-muted mt-1">Buttons are non-functional in the styleguide (demo only).</div>
+	</div>
+
+	{# ---------- Sizes / Disabled / Readonly / Floating ---------- #}
+	<div class="col-lg-6">
+		<div class="small text-muted text-uppercase mb-2">Sizes</div>
+		<div class="row g-2">
+			<div class="col-sm-4">
+				<input type="text" class="form-control form-control-sm" placeholder="Small">
+			</div>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" placeholder="Default">
+			</div>
+			<div class="col-sm-4">
+				<input type="text" class="form-control form-control-lg" placeholder="Large">
+			</div>
+		</div>
+
+		<div class="small text-muted text-uppercase mt-3 mb-2">Disabled & Readonly</div>
+		<div class="row g-2">
+			<div class="col-sm-6">
+				<input type="text" class="form-control" value="Disabled" disabled>
+			</div>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" value="Readonly" readonly>
+			</div>
+		</div>
+
+		<div class="small text-muted text-uppercase mt-3 mb-2">Floating labels</div>
+		<div class="form-floating mb-2">
+			<input type="email" class="form-control" id="sgFloatEmail" placeholder="name@example.com" value="jane@doe.com">
+			<label for="sgFloatEmail">Email address</label>
+		</div>
+		<div class="form-floating">
+			<textarea class="form-control" placeholder="Leave a comment here" id="sgFloatTextarea" style="height: 90px"></textarea>
+			<label for="sgFloatTextarea">Comments</label>
+		</div>
+	</div>
+
+</div>

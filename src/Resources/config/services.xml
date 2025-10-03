@@ -5,22 +5,33 @@
 
     <services>
         <defaults autowire="true" autoconfigure="true" public="false"/>
+        <prototype namespace="StrixNLUxUpgrades\" resource="../../" exclude="../../Resources,../../Test,../../tests"/>
 
-        <!-- CMS element resolver for Latest Orders -->
         <service id="StrixNLUxUpgrades\Core\Content\Cms\StrixLatestOrdersCmsElementResolver">
             <argument type="service" id="order.repository"/>
             <tag name="shopware.cms.data_resolver"/>
         </service>
 
-        <!-- Subscriber for unified discount summary -->
         <service id="StrixNLUxUpgrades\Storefront\Page\Checkout\UnifiedDiscountSummarySubscriber">
             <tag name="kernel.event_subscriber"/>
         </service>
 
-        <!-- Subscriber for footer language -->
         <service id="StrixNLUxUpgrades\Storefront\Page\FooterLanguageDataSubscriber">
             <argument type="service" id="Shopware\Storefront\Pagelet\Header\HeaderPageletLoader"/>
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="StrixNLUxUpgrades\Storefront\Controller\StyleguideController" public="true">
+            <tag name="controller.service_arguments"/>
+        </service>
+
+        <service id="StrixNLUxUpgrades\Storefront\Routing\StyleguideRouteAliasSubscriber">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="StrixNLUxUpgrades\Storefront\EventSubscriber\StyleguideNoIndexSubscriber">
             <tag name="kernel.event_subscriber"/>
         </service>
 

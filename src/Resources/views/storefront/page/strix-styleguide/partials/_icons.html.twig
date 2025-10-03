@@ -1,0 +1,91 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_icons.html.twig #}
+{% import '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' as sg %}
+
+{{ sg.cap('Icons') }}
+
+{# Commerce #}
+<h3 class="h6 mb-2">Commerce</h3>
+<div class="border rounded-1 p-3 mb-3">
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+		{% for name in [
+      'bag','bag-product','basket','cart','shop','truck','tags',
+      'money-card','money-cash','money-wallet','package-closed','package-open','package-gift'
+    ] %}
+			<div class="d-flex align-items-center gap-2">
+				{% sw_icon name %}
+				<span class="small">{{ name }}</span>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{# UI / Navigation #}
+<h3 class="h6 mb-2">UI / Navigation</h3>
+<div class="border rounded-1 p-3 mb-3">
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+		{% for name in [
+      'search','stack','sliders','sliders-horizontal','filter','settings','share','external',
+      'sidebar-open','sidebar-close','more-horizontal','more-vertical','grab','drag-horizontal','drag-vertical',
+      'screen-full','screen-minimize','preview','quickjump','replace'
+    ] %}
+			<div class="d-flex align-items-center gap-2">
+				{% sw_icon name %}
+				<span class="small">{{ name }}</span>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{# Status / Feedback #}
+<h3 class="h6 mb-2">Status & Feedback</h3>
+<div class="border rounded-1 p-3 mb-3">
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+		{% for name in [
+      'checkmark','checkmark-circle','warning','error','info','help','alert','blocked',
+      'x','x-circle','x-wide','minus','minus-circle','plus','plus-circle','heart','heart-fill','star','star-half'
+    ] %}
+			<div class="d-flex align-items-center gap-2">
+				{% sw_icon name %}
+				<span class="small">{{ name }}</span>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{# Arrows (Shopware uses arrow-* not chevron-*) #}
+<h3 class="h6 mb-2">Arrows</h3>
+<div class="border rounded-1 p-3 mb-3">
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+		{% for name in [
+      'arrow-right','arrow-left','arrow-up','arrow-down',
+      'arrow-head-right','arrow-head-left','arrow-head-up','arrow-head-down',
+      'arrow-circle-right','arrow-circle-left','arrow-circle-up','arrow-circle-down',
+      'arrow-switch','arrow-turn-right','arrow-turn-left','arrow-up-down',
+      'arrow-360-right','arrow-360-left','arrow-move-horizontal-axis','arrow-move-vertical-axis',
+      'sort-up','sort-down'
+    ] %}
+			<div class="d-flex align-items-center gap-2">
+				{% sw_icon name %}
+				<span class="small">{{ name }}</span>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{# Miscellaneous #}
+<h3 class="h6 mb-2">Misc</h3>
+<div class="border rounded-1 p-3">
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+		{% for name in [
+      'avatar','avatar-multiple','bookmark','envelope','phone','globe','shopware','shield',
+      'lock-closed','lock-open','lock-key','lock-fingerprint',
+      'clock','calendar','calendar-empty','euro','printer','server','database','bug','rocket',
+      'image','video-camera','photocamera','desktop','mobile','tablet','home','map','marker'
+    ] %}
+			<div class="d-flex align-items-center gap-2">
+				{% sw_icon name %}
+				<span class="small">{{ name }}</span>
+			</div>
+		{% endfor %}
+	</div>
+</div>

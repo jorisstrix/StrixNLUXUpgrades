@@ -74,3 +74,37 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/scss/base.scss`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
 -   `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/header/header.html.twig`
+### 2025-10-03 21:08 — 8fae98fb
+- Added feature to enable sticky header
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/main.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/styleguide/styleguide.plugin.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/config.xml`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/routes.xml`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/config/services.xml`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/index.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_background.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_badges.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_borders-radius.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_breadcrumb-pagination.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_breakpoints.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_buttons-messages.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_colors.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_elevation-spacing.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_forms.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_icons.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_images-figures.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_links.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_lists-tabs-accordion.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_load-states.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_macros.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_table.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_typography.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_utilities.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Controller/StyleguideController.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/EventSubscriber/StyleguideNoIndexSubscriber.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Routing/StyleguideRouteAliasSubscriber.php`
+

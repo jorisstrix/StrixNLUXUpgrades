@@ -1,0 +1,140 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_utilities.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Utilities') }}
+
+<div
+	class="row g-4">
+
+	{# ---------------- Aspect ratio ---------------- #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Aspect ratio</div>
+
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="small text-muted mb-1">
+						<code>.ratio .ratio-16x9</code>
+					</div>
+					<div class="ratio ratio-16x9 border rounded">
+						<div class="d-flex align-items-center justify-content-center text-muted">16×9 area</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<div class="small text-muted mb-1">
+						<code>.ratio .ratio-1x1</code>
+					</div>
+					<div class="ratio ratio-1x1 border rounded">
+						<div class="d-flex align-items-center justify-content-center text-muted">1×1</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<div class="small text-muted mb-1">
+						<code>.ratio .ratio-4x3</code>
+					</div>
+					<div class="ratio ratio-4x3 border rounded">
+						<div class="d-flex align-items-center justify-content-center text-muted">4×3</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="small text-muted mb-1">Custom ratio via CSS variable</div>
+					<div class="ratio border rounded" style="--bs-aspect-ratio: 50%;">
+						<div class="d-flex align-items-center justify-content-center text-muted">2×1 (50%)</div>
+					</div>
+					<div class="small text-muted mt-1">
+						Set
+						<code>--bs-aspect-ratio</code>
+						on
+						<code>.ratio</code>
+						to a percentage (height / width × 100).
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# ---------------- Floats & clearfix ---------------- #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Floats &amp; clearfix</div>
+
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="small text-muted mb-1">Basic floats</div>
+
+					<div class="border rounded p-2">
+						<div class="clearfix">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64'%3E%3Crect width='100%25' height='100%25' fill='%23ced4da'/%3E%3C/svg%3E" class="rounded me-2 mb-2 float-start" alt="placeholder" width="96" height="64">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64'%3E%3Crect width='100%25' height='100%25' fill='%23ced4da'/%3E%3C/svg%3E" class="rounded ms-2 mb-2 float-end" alt="placeholder" width="96" height="64">
+
+							<p class="mb-0 small">
+								This text flows around a
+								<code>.float-start</code>
+								image and a
+								<code>.float-end</code>
+								image.
+								                The parent uses
+								<code>.clearfix</code>
+								so it wraps floated content.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="small text-muted mb-1">Remove float</div>
+					<div class="border rounded p-2">
+						<div class="float-none small">.float-none</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="small text-muted mb-1">Responsive floats (example classes)</div>
+					<div class="d-flex flex-wrap gap-2 small">
+						<code>.float-sm-start</code>
+						<code>.float-md-end</code>
+						<code>.float-lg-none</code>
+					</div>
+					<div class="text-muted small mt-1">
+						Use breakpointed variants to change float behavior per viewport.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# ---------------- Z-index (quick peek) ---------------- #}
+	<div class="col-12">
+		<div class="border rounded-1 p-3">
+			<div class="small text-muted text-uppercase mb-2">Z-index</div>
+
+			<div
+				class="position-relative" style="height:120px;">
+				{# Base tile #}
+				<div class="position-absolute z-0 rounded" style="left:0; top:20px; width:140px; height:80px; background:var(--bs-secondary-bg); border:1px solid var(--bs-border-color);"></div>
+
+				{# Overlapping tile with lower z #}
+				<div class="position-absolute z-1 rounded" style="left:60px; top:10px; width:140px; height:80px; background:var(--bs-primary-bg-subtle); border:1px solid var(--bs-primary-border-subtle);"></div>
+
+				{# Topmost tile #}
+				<div class="position-absolute z-3 rounded d-flex align-items-center justify-content-center text-muted" style="left:110px; top:40px; width:140px; height:80px; background:var(--bs-body-bg); border:1px solid var(--bs-border-color);">
+					<span class="small">.z-3</span>
+				</div>
+			</div>
+
+			<div class="small text-muted mt-2">
+				Utilities available:
+				<code>.z-n1</code>,
+				<code>.z-0</code>,
+				<code>.z-1</code>,
+				<code>.z-2</code>,
+				<code>.z-3</code>.
+					        Actual stacking still depends on positioning and stacking context.
+			</div>
+		</div>
+	</div>
+
+</div>

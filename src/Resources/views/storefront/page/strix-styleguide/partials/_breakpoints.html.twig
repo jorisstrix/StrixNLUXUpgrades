@@ -1,0 +1,154 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_breakpoints.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Breakpoints') }}
+
+<div class="border rounded-1 p-3 mb-3">
+	<div class="row gy-3 align-items-center">
+		<div class="col-md">
+			<div class="small text-muted text-uppercase mb-1">Current viewport</div>
+			<div class="d-flex align-items-center gap-2">
+				<span class="badge text-bg-secondary" id="sg-vp-size">—</span>
+				<span class="text-muted small">(width:
+					<span id="sg-vp-width">—</span>px)</span>
+			</div>
+		</div>
+		<div class="col-md">
+			<div class="small text-muted text-uppercase mb-1">Live indicator</div>
+			<div class="d-flex flex-wrap gap-2">
+				<span class="badge text-bg-primary d-sm-none">xs (&lt;576)</span>
+				<span class="badge text-bg-primary d-none d-sm-inline d-md-none">sm (≥576)</span>
+				<span class="badge text-bg-primary d-none d-md-inline d-lg-none">md (≥768)</span>
+				<span class="badge text-bg-primary d-none d-lg-inline d-xl-none">lg (≥992)</span>
+				<span class="badge text-bg-primary d-none d-xl-inline d-xxl-none">xl (≥1200)</span>
+				<span class="badge text-bg-primary d-none d-xxl-inline">xxl (≥1400)</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="table-responsive border rounded-1">
+	<table class="table table-sm align-middle mb-0">
+		<thead class="table-light">
+			<tr>
+				<th class="w-25">Breakpoint</th>
+				<th>Alias</th>
+				<th>Min width</th>
+				<th>Common utility example</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Extra small</td>
+				<td>
+					<code>xs</code>
+				</td>
+				<td>
+					<code>0</code>
+				</td>
+				<td>
+					<code>.d-inline</code>
+					(no infix)</td>
+			</tr>
+			<tr>
+				<td>Small</td>
+				<td>
+					<code>sm</code>
+				</td>
+				<td>
+					<code>576px</code>
+				</td>
+				<td>
+					<code>.d-sm-inline</code>
+				</td>
+			</tr>
+			<tr>
+				<td>Medium</td>
+				<td>
+					<code>md</code>
+				</td>
+				<td>
+					<code>768px</code>
+				</td>
+				<td>
+					<code>.d-md-inline</code>
+				</td>
+			</tr>
+			<tr>
+				<td>Large</td>
+				<td>
+					<code>lg</code>
+				</td>
+				<td>
+					<code>992px</code>
+				</td>
+				<td>
+					<code>.d-lg-inline</code>
+				</td>
+			</tr>
+			<tr>
+				<td>Extra large</td>
+				<td>
+					<code>xl</code>
+				</td>
+				<td>
+					<code>1200px</code>
+				</td>
+				<td>
+					<code>.d-xl-inline</code>
+				</td>
+			</tr>
+			<tr>
+				<td>XXL</td>
+				<td>
+					<code>xxl</code>
+				</td>
+				<td>
+					<code>1400px</code>
+				</td>
+				<td>
+					<code>.d-xxl-inline</code>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+{# tiny, inline JS purely to compute current width + label #}
+<script>
+	(function () {
+function label(w) {
+if (w >= 1400) 
+return 'xxl';
+
+if (w >= 1200) 
+return 'xl';
+
+if (w >= 992) 
+return 'lg';
+
+if (w >= 768) 
+return 'md';
+
+if (w >= 576) 
+return 'sm';
+
+return 'xs';
+}
+function tick() {
+var w = window.innerWidth || document.documentElement.clientWidth;
+var size = label(w);
+var $size = document.getElementById('sg-vp-size');
+var $w = document.getElementById('sg-vp-width');
+if ($size) 
+$size.textContent = size;
+
+if ($w) 
+$w.textContent = w;
+
+}
+window.addEventListener('resize', tick, {passive: true});
+document.addEventListener('DOMContentLoaded', tick);
+tick();
+})();
+</script>

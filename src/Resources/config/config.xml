@@ -102,5 +102,25 @@
             <scope>sales-channel</scope>
         </input-field>
     </card>
+
+    <card>
+    <title>Styleguide</title>
+
+    <input-field type="bool">
+        <name>styleguideEnabled</name>
+        <label>Enable styleguide page</label>
+        <defaultValue>true</defaultValue>
+        <helpText>When enabled, the styleguide is available at the path below.</helpText>
+        <scope>sales-channel</scope>
+    </input-field>
+
+    <input-field type="text">
+        <name>styleguidePath</name>
+        <label>Styleguide path</label>
+        <placeholder>/styleguide</placeholder>
+        <helpText>Public URL path for the styleguide (must start with “/”). Leave blank to use “/styleguide”.</helpText>
+        <scope>sales-channel</scope>
+    </input-field>
+</card>
     
 </config>

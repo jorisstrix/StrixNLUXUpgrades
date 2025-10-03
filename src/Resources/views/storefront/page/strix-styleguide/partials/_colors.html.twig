@@ -1,0 +1,110 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_colors.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap, colorTile %}
+
+{{ cap('Colors') }}
+
+{# ===== Semantic brand palette ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Semantic</div>
+	<div class="row">
+		{{ colorTile('Primary',   '--bs-primary') }}
+		{{ colorTile('Secondary', '--bs-secondary') }}
+		{{ colorTile('Success',   '--bs-success') }}
+		{{ colorTile('Info',      '--bs-info') }}
+		{{ colorTile('Warning',   '--bs-warning') }}
+		{{ colorTile('Danger',    '--bs-danger') }}
+	</div>
+</div>
+
+{# ===== Grayscale (compact) ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Grayscale</div>
+	<div class="row">
+		{{ colorTile('White',     '--bs-white') }}
+		{{ colorTile('Gray-100',  '--bs-gray-100') }}
+		{{ colorTile('Gray-200',  '--bs-gray-200') }}
+		{{ colorTile('Gray-400',  '--bs-gray-400') }}
+		{{ colorTile('Gray-600',  '--bs-gray-600') }}
+		{{ colorTile('Gray-800',  '--bs-gray-800') }}
+		{{ colorTile('Gray-900',  '--bs-gray-900') }}
+		{{ colorTile('Black',     '--bs-black') }}
+	</div>
+</div>
+
+{# ===== Background layers ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Background layers</div>
+	<div class="row">
+		{{ colorTile('Body bg',       '--bs-body-bg') }}
+		{{ colorTile('Secondary bg',  '--bs-secondary-bg') }}
+		{{ colorTile('Tertiary bg',   '--bs-tertiary-bg') }}
+	</div>
+</div>
+
+{# ===== Subtle backgrounds ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Subtle backgrounds</div>
+	<div class="row">
+		{{ colorTile('Primary subtle',   '--bs-primary-bg-subtle') }}
+		{{ colorTile('Secondary subtle', '--bs-secondary-bg-subtle') }}
+		{{ colorTile('Dark subtle',      '--bs-dark-bg-subtle') }}
+		{{ colorTile('Light subtle',     '--bs-light-bg-subtle') }}
+		{{ colorTile('Success subtle',   '--bs-success-bg-subtle') }}
+		{{ colorTile('Info subtle',      '--bs-info-bg-subtle') }}
+		{{ colorTile('Warning subtle',   '--bs-warning-bg-subtle') }}
+		{{ colorTile('Danger subtle',    '--bs-danger-bg-subtle') }}
+	</div>
+</div>
+
+{# ===== Borders (subtle + default) ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Borders</div>
+	<div class="row">
+		{{ colorTile('Border default',        '--bs-border-color') }}
+		{{ colorTile('Primary border subtle', '--bs-primary-border-subtle') }}
+		{{ colorTile('Secondary border subtle','--bs-secondary-border-subtle') }}
+		{{ colorTile('Dark border subtle',    '--bs-dark-border-subtle') }}
+		{{ colorTile('Light border subtle',   '--bs-light-border-subtle') }}
+		{{ colorTile('Success border subtle', '--bs-success-border-subtle') }}
+		{{ colorTile('Info border subtle',    '--bs-info-border-subtle') }}
+		{{ colorTile('Warning border subtle', '--bs-warning-border-subtle') }}
+		{{ colorTile('Danger border subtle',  '--bs-danger-border-subtle') }}
+	</div>
+</div>
+
+{# ===== Text & links ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Text & Links</div>
+	<div class="row">
+		{{ colorTile('Body color',             '--bs-body-color') }}
+		{{ colorTile('Heading color',          '--bs-heading-color') }}
+		{{ colorTile('Primary text emphasis',  '--bs-primary-text-emphasis') }}
+		{{ colorTile('Dark text emphasis',     '--bs-dark-text-emphasis') }}
+		{{ colorTile('Light text emphasis',    '--bs-light-text-emphasis') }}
+		{{ colorTile('Link color',             '--bs-link-color') }}
+		{{ colorTile('Link hover color',       '--bs-link-hover-color') }}
+		{{ colorTile('Code color',             '--bs-code-color') }}
+		{{ colorTile('Highlight bg',           '--bs-highlight-bg') }}
+	</div>
+</div>
+
+{# ===== Focus & gradient ===== #}
+<div class="mb-3">
+	<div class="small text-muted text-uppercase mb-2">Focus & Gradient</div>
+	<div class="row">
+		{{ colorTile('Focus ring', '--bs-focus-ring-color') }}
+
+		{# Gradient needs background-image instead of background-color #}
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+			<div class="border rounded-1 overflow-hidden">
+				<div class="w-100" style="height:64px;background-image: var(--bs-gradient); background-size: 100% 100%;"></div>
+				<div class="p-2 small">
+					<div class="fw-semibold">Gradient</div>
+					<div class="text-muted">
+						<code>var(--bs-gradient)</code>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

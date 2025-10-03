@@ -1,0 +1,262 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_typography.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Typography') }}
+
+<div
+	class="row g-3">
+
+	{# ======================= BODY ======================= #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Body</div>
+
+			<p class="mb-2" style="font-family:var(--bs-font-sans-serif);font-size:var(--bs-body-font-size);line-height:var(--bs-body-line-height);color:var(--bs-body-color);">
+				The quick brown fox jumps over the lazy dog. 1234567890
+			</p>
+
+			<ul class="small text-muted list-unstyled mb-0">
+				<li>
+					<code>--bs-font-sans-serif</code>
+				</li>
+				<li>
+					<code>--bs-body-font-size</code>
+				</li>
+				<li>
+					<code>--bs-body-line-height</code>
+				</li>
+				<li>
+					<code>--bs-body-color</code>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	{# ======================= HEADINGS & DISPLAYS ======================= #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Headings</div>
+
+			<div class="row">
+				<div class="col-6">
+					<h1 class="h1 mb-1">H1</h1>
+					<h2 class="h2 mb-1">H2</h2>
+					<h3 class="h3 mb-1">H3</h3>
+				</div>
+				<div class="col-6">
+					<h4 class="h4 mb-1">H4</h4>
+					<h5 class="h5 mb-1">H5</h5>
+					<h6 class="h6 mb-0">H6</h6>
+				</div>
+			</div>
+
+			<hr class="my-3">
+
+			<div class="small text-muted text-uppercase mb-2">Display headings</div>
+			<div class="d-flex flex-wrap gap-2 align-items-end">
+				<span class="display-6 d-inline-block">D6</span>
+				<span class="display-5 d-inline-block">D5</span>
+				<span class="display-4 d-inline-block">D4</span>
+				<span class="display-3 d-inline-block">D3</span>
+				<span class="display-2 d-inline-block">D2</span>
+				<span class="display-1 d-inline-block">D1</span>
+			</div>
+		</div>
+	</div>
+
+	{# ======================= WEIGHTS ======================= #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Font weights</div>
+
+			<div class="row g-1">
+				<div class="col-sm-6">
+					<div class="fw-light">.fw-light
+						<span class="text-muted">(300)</span>
+					</div>
+					<div class="fw-normal">.fw-normal
+						<span class="text-muted">(400)</span>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="fw-semibold">.fw-semibold
+						<span class="text-muted">(600)</span>
+					</div>
+					<div class="fw-bold">.fw-bold
+						<span class="text-muted">(700)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# ======================= INLINE & EMPHASIS ======================= #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Inline &amp; emphasis</div>
+
+			<p class="mb-3">
+				<strong>Strong</strong>,
+				<em>emphasis</em>,
+				<mark>mark</mark>,
+				<code>inline code</code>,
+				<kbd>⌘K</kbd>,
+				<small class="text-muted">small text</small>.
+			</p>
+
+			<div class="small text-muted text-uppercase mb-2">Lead & small</div>
+			<p class="lead mb-1">Lead paragraph to draw attention.</p>
+			<p class="mb-0">
+				<small class="text-muted">Small, muted supporting text.</small>
+			</p>
+		</div>
+	</div>
+
+	{# ======================= TEXT UTILITIES ======================= #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Text utilities</div>
+
+			<div class="d-flex flex-column gap-1">
+				<div>
+					<span class="text-uppercase">uppercase</span>
+					<span class="text-muted small">(.text-uppercase)</span>
+				</div>
+				<div>
+					<span class="text-lowercase">LOWERCASE</span>
+					<span class="text-muted small">(.text-lowercase)</span>
+				</div>
+				<div>
+					<span class="text-capitalize">capitalized words</span>
+					<span class="text-muted small">(.text-capitalize)</span>
+				</div>
+				<div>
+					<span class="text-decoration-underline">underline</span>
+					<span class="text-muted small">(.text-decoration-underline)</span>
+				</div>
+				<div>
+					<span class="text-decoration-line-through">strikethrough</span>
+					<span class="text-muted small">(.text-decoration-line-through)</span>
+				</div>
+				<div>
+					<em>italic</em>
+					<span class="text-muted small">(&lt;em&gt;)</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# ======================= BLOCKQUOTE ======================= #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Blockquote</div>
+
+			<figure class="mb-0">
+				<blockquote class="blockquote mb-1">
+					<p class="mb-0">Good design is as little design as possible.</p>
+				</blockquote>
+				<figcaption class="blockquote-footer mb-0">Dieter Rams</figcaption>
+			</figure>
+		</div>
+	</div>
+
+	{# ======================= TEXT EXTRAS ======================= #}
+	<div class="col-12">
+		<div class="border rounded-1 p-3">
+			<div class="small text-muted text-uppercase mb-2">Text extras</div>
+
+			{# Truncate #}
+			<div class="mb-3">
+				<div class="small text-muted mb-1">Truncate (single line)</div>
+				<div style="max-width: 360px;">
+					<div class="text-truncate">
+						The quick brown fox jumps over the lazy dog — this is long text that will be truncated with an ellipsis.
+					</div>
+				</div>
+				<div class="text-muted small mt-1">
+					<code>.text-truncate</code>
+					(needs a constrained width)</div>
+			</div>
+
+			{# Font size utilities #}
+			<div class="mb-3">
+				<div class="small text-muted mb-1">Font size utilities</div>
+				<div class="d-inline-flex flex-wrap gap-3 align-items-end">
+					<span class="fs-1">.fs-1</span>
+					<span class="fs-2">.fs-2</span>
+					<span class="fs-3">.fs-3</span>
+					<span class="fs-4">.fs-4</span>
+					<span class="fs-5">.fs-5</span>
+					<span class="fs-6">.fs-6</span>
+				</div>
+				<div class="text-muted small mt-1">
+					<code>.fs-1</code>
+					…
+					<code>.fs-6</code>
+				</div>
+			</div>
+
+			{# Line-height utilities #}
+			<div class="mb-3">
+				<div class="small text-muted mb-1">Line height</div>
+				<div class="row g-2">
+					<div class="col-md-4">
+						<div class="lh-1">
+							<div class="small text-muted mb-1">
+								<code>.lh-1</code>
+							</div>
+							<p class="m-0">Tight line height for compact stacks of text.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="lh-sm">
+							<div class="small text-muted mb-1">
+								<code>.lh-sm</code>
+							</div>
+							<p class="m-0">Slightly reduced line height for denser content.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="lh-lg">
+							<div class="small text-muted mb-1">
+								<code>.lh-lg</code>
+							</div>
+							<p class="m-0">Relaxed leading for airy paragraphs.</p>
+						</div>
+					</div>
+				</div>
+				<div class="text-muted small mt-1">
+					<code>.lh-1</code>,
+					<code>.lh-sm</code>,
+					<code>.lh-base</code>,
+					<code>.lh-lg</code>
+				</div>
+			</div>
+
+			{# Wrap & break #}
+			<div class="mb-0">
+				<div class="small text-muted mb-1">Wrap &amp; break</div>
+				<div class="row g-2">
+					<div class="col-md-6">
+						<div style="max-width: 360px;">
+							<div class="text-wrap">.text-wrap (default) — long strings of normal text will wrap naturally.</div>
+						</div>
+						<div class="text-muted small mt-1">
+							<code>.text-wrap</code>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div style="max-width: 360px;">
+							<div class="text-break">.text-break — ExtremelyLongStringWithoutSpaces_0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ will break to avoid overflow.</div>
+						</div>
+						<div class="text-muted small mt-1">
+							<code>.text-break</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

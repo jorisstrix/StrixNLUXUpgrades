@@ -1,0 +1,164 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_elevation-spacing.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Elevation & Shadows') }}
+
+<div class="row g-3">
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Shadows</div>
+
+			<div class="row g-2">
+				<div class="col-sm-6">
+					<div class="p-3 border rounded bg-body shadow-sm">.shadow-sm</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="p-3 border rounded bg-body shadow">.shadow</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="p-3 border rounded bg-body shadow-lg">.shadow-lg</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="p-3 border rounded bg-body shadow-none">.shadow-none</div>
+				</div>
+			</div>
+
+			<hr class="my-3">
+
+			<div class="small text-muted text-uppercase mb-2">Tokens</div>
+			<ul class="small text-muted list-unstyled mb-0">
+				<li>
+					<code>--bs-box-shadow</code>
+				</li>
+				<li>
+					<code>--bs-box-shadow-sm</code>
+				</li>
+				<li>
+					<code>--bs-box-shadow-lg</code>
+				</li>
+				<li>
+					<code>--bs-box-shadow-inset</code>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Example usage</div>
+			<div class="p-3 border rounded bg-body shadow-sm mb-2">Card-like surface (.shadow-sm)</div>
+			<div class="p-3 border rounded bg-body shadow mb-2">Raised surface (.shadow)</div>
+			<div class="p-3 border rounded bg-body shadow-lg">Modal/elevated (.shadow-lg)</div>
+		</div>
+	</div>
+</div>
+
+{{ cap('Spacing') }}
+
+<div
+	class="row g-3">
+	{# Scale bars (m/p 0..5) #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Scale (0–5)</div>
+			<div class="d-flex align-items-end gap-2">
+				{% for n in [0,1,2,3,4,5] %}
+					<div class="bg-secondary" style="width: 18px; height: {{ 8 + (n * 10) }}px;" title="m-{{ n }} / p-{{ n }}"></div>
+				{% endfor %}
+			</div>
+
+			<div class="small text-muted mt-2">
+				Utilities:
+				<code>m-0..5</code>,
+				<code>p-0..5</code>, directional variants
+					        (<code>mt</code>,
+				<code>me</code>,
+				<code>mb</code>,
+				<code>ms</code>,
+				<code>mx</code>,
+				<code>my</code>).
+			</div>
+		</div>
+	</div>
+
+	{# Concrete margin/padding examples #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Examples</div>
+
+			<div class="bg-body border mb-2">
+				<div class="p-3">.p-3 (padding)</div>
+			</div>
+
+			<div class="bg-body border mb-2">
+				<div class="py-2 px-4">.py-2 .px-4</div>
+			</div>
+
+			<div class="bg-body border m-2 p-2">
+				.m-2 (outer margin) &nbsp; · &nbsp; .p-2 (inner padding)
+			</div>
+
+			<div class="small text-muted mt-2">
+				Responsive: prefix with breakpoint (<code>.p-lg-3</code>,
+				<code>.mt-md-4</code>).
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ cap('Gaps & Gutters') }}
+
+<div class="row g-3">
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Flex/Grid gap</div>
+			<div class="d-flex flex-wrap bg-body border p-2 gap-1 mb-2">
+				<span class="badge text-bg-secondary">.gap-1</span>
+				<span class="badge text-bg-secondary">.gap-1</span>
+				<span class="badge text-bg-secondary">.gap-1</span>
+			</div>
+			<div class="d-flex flex-wrap bg-body border p-2 gap-3">
+				<span class="badge text-bg-secondary">.gap-3</span>
+				<span class="badge text-bg-secondary">.gap-3</span>
+				<span class="badge text-bg-secondary">.gap-3</span>
+			</div>
+			<div class="small text-muted mt-2">
+				Utilities:
+				<code>gap-0..5</code>, responsive variants supported.
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Grid gutters</div>
+			<div class="row row-cols-3 g-1 mb-2">
+				<div>
+					<div class="p-2 border bg-body text-center small">g-1</div>
+				</div>
+				<div>
+					<div class="p-2 border bg-body text-center small">g-1</div>
+				</div>
+				<div>
+					<div class="p-2 border bg-body text-center small">g-1</div>
+				</div>
+			</div>
+			<div class="row row-cols-3 g-3">
+				<div>
+					<div class="p-2 border bg-body text-center small">g-3</div>
+				</div>
+				<div>
+					<div class="p-2 border bg-body text-center small">g-3</div>
+				</div>
+				<div>
+					<div class="p-2 border bg-body text-center small">g-3</div>
+				</div>
+			</div>
+			<div class="small text-muted mt-2">
+				Utilities:
+				<code>g-0..5</code>, plus directional
+				<code>gx-*</code>/<code>gy-*</code>.
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_images-figures.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Images & Figures') }}
+
+{% set imgWide %}
+data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
+	<rect width='100%' height='100%' fill='%23eee'/>
+	<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-family='Arial' font-size='20'>
+		800×450
+	</text>
+</svg>
+{% endset %}
+
+{% set imgSquare %}
+data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'>
+	<rect width='100%' height='100%' fill='%23eee'/>
+	<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-family='Arial' font-size='20'>
+		600×600
+	</text>
+</svg>
+{% endset %}
+
+<div class="row g-3">
+	<div class="col-lg-4">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Responsive image</div>
+			<img src="{{ imgWide|trim }}" alt="Responsive example" class="img-fluid mb-2">
+			<div class="small text-muted">.img-fluid makes images scale with the parent.</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Thumbnail</div>
+			<img src="{{ imgSquare|trim }}" alt="Thumbnail example" class="img-thumbnail mb-2">
+			<div class="small text-muted">.img-thumbnail adds padding &amp; a border.</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Figure</div>
+			<figure class="figure mb-0">
+				<img src="{{ imgWide|trim }}" class="figure-img img-fluid mb-2" alt="Figure image">
+				<figcaption class="figure-caption">Optional caption for an image.</figcaption>
+			</figure>
+		</div>
+	</div>
+</div>

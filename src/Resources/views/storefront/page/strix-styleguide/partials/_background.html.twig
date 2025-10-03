@@ -1,0 +1,110 @@
+{# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_background.html.twig #}
+{% from '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_macros.html.twig' import cap %}
+
+{{ cap('Background utilities') }}
+
+<div
+	class="row g-4">
+
+	{# ---------- Core background classes ---------- #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Context backgrounds</div>
+
+			<div class="row row-cols-2 row-cols-sm-3 g-3">
+				{% for item in [
+          {label:'bg-body',       box:'bg-body',       text:''},
+          {label:'bg-light',      box:'bg-light',      text:''},
+          {label:'bg-secondary',  box:'bg-secondary',  text:'text-white'},
+          {label:'bg-dark',       box:'bg-dark',       text:'text-white'},
+          {label:'bg-primary',    box:'bg-primary',    text:'text-white'},
+          {label:'bg-success',    box:'bg-success',    text:'text-white'},
+          {label:'bg-info',       box:'bg-info',       text:'text-dark'},
+          {label:'bg-warning',    box:'bg-warning',    text:'text-dark'},
+          {label:'bg-danger',     box:'bg-danger',     text:'text-white'}
+        ] %}
+					<div>
+						<div class="rounded p-3 {{ item.box }} {{ item.text }} border">
+							<div class="small m-0">{{ item.label }}</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="small text-muted mt-2">
+				Uses Bootstrap utility classes like
+				<code>.bg-primary</code>,
+				<code>.bg-dark</code>, etc.
+			</div>
+		</div>
+	</div>
+
+	{# ---------- Gradient helper ---------- #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Gradient overlay</div>
+
+			<div class="row row-cols-1 row-cols-sm-2 g-3">
+				<div>
+					<div class="rounded p-4 bg-primary bg-gradient text-white border">
+						<div class="small m-0">.bg-primary.bg-gradient</div>
+					</div>
+				</div>
+				<div>
+					<div class="rounded p-4 bg-dark bg-gradient text-white border">
+						<div class="small m-0">.bg-dark.bg-gradient</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="small text-muted mt-2">
+				<code>.bg-gradient</code>
+				applies the theme gradient (via
+				<code>--bs-gradient</code>) on top of the bg color.
+			</div>
+		</div>
+	</div>
+
+	{# ---------- Transparency & transparent helper ---------- #}
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Opacity helpers</div>
+
+			<div class="row row-cols-3 g-3">
+				{% for op in [10,25,50,75,100] %}
+					<div>
+						<div class="rounded border bg-primary bg-opacity-{{ op }}" style="height:56px;"></div>
+						<div class="small text-muted mt-1 text-center">.bg-opacity-{{ op }}</div>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="small text-muted mt-2">
+				Combine with a bg color (e.g.
+				<code>.bg-primary.bg-opacity-25</code>).
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6">
+		<div class="border rounded-1 p-3 h-100">
+			<div class="small text-muted text-uppercase mb-2">Transparent</div>
+
+			<div class="rounded p-3 border position-relative" style="min-height:80px;">
+				<div class="position-absolute top-0 start-0 w-100 h-100" style="background: repeating-linear-gradient(45deg,#eee,#eee 10px,#f9f9f9 10px,#f9f9f9 20px); opacity:.6;"></div>
+				<div class="position-relative">
+					<span class="badge text-bg-secondary">Background pattern</span>
+					<div class="rounded p-2 bg-transparent border mt-2">
+						<div class="small m-0">.bg-transparent</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="small text-muted mt-2">
+				<code>.bg-transparent</code>
+				clears any background, letting parent/background show through.
+			</div>
+		</div>
+	</div>
+
+</div>
