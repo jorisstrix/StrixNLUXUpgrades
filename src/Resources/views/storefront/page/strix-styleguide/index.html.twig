@@ -1,6 +1,10 @@
 {# custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/index.html.twig #}
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
+{% block layout_head_robots %}
+	<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
 {% block base_content %}
 	<main class="container my-5" data-strix-styleguide>
 		<header class="mb-4">

@@ -31,9 +31,5 @@
             <tag name="kernel.event_subscriber"/>
         </service>
 
-        <service id="StrixNLUxUpgrades\Storefront\EventSubscriber\StyleguideNoIndexSubscriber">
-            <tag name="kernel.event_subscriber"/>
-        </service>
-
     </services>
 </container>

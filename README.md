@@ -1,4 +1,4 @@
-# STRIX UX Upgrades (v1.7.0)
+# STRIX UX Upgrades (v1.8.0)
 
 ## What this plugin does
 
@@ -50,6 +50,79 @@
       Can be activated in the plugin settings.
     - The sticky header is responsive and will hide the logo below the **lg** breakpoint (992px).
     - Background color of the sticky header is set by the variable `--bs-tertiary-bg`.
+
+9. **Styleguide** (merged in v1.8.0)
+
+    A compact, storefront-rendered styleguide you can open in the shop to quickly review tokens and UI components.
+
+    **Highlights**
+
+    - Route: `frontend.page.styleguide` (default path: `/styleguide`)
+    - **Always** sent with `X-Robots-Tag: noindex, nofollow` so search engines won’t index it.
+    - Enabled/disabled and **path configurable** via plugin settings.
+    - Organized into **accordion sections**; each section is a Twig partial you can maintain independently.
+    - No custom JS required (only Bootstrap/Shopware defaults). Any interactive components are shown as static examples.
+
+    **Configure**
+
+    - **Administration → Extensions → My extensions → StrixNLUxUpgrades → Config**
+        - `styleguideEnabled` (bool): Turn the styleguide on/off per sales channel.
+        - `styleguidePath` (text): Override the path (e.g. `/design-system`, `/brand/styleguide`).
+    - After changing the path or enabling:
+        ```bash
+        bin/console cache:clear
+        bin/console theme:compile
+        ```
+    - Open your styleguide at the configured path (default `/styleguide`).
+
+    **What’s included**
+
+    - **Typography**: body, headings (H1–H6), display headings, weights (300/400/600/700), inline emphasis, truncate, font size utilities (`.fs-1`..`.fs-6`), line-height (`.lh-*`), wrap/break, and blockquote.
+    - **Links**: defaults & hover notes, helper examples.
+    - **Colors**: semantic colors and background subtles (`--bs-*` variables shown).
+    - **Buttons & Messages**: button variants/sizes/disabled, and Bootstrap alerts (success/info/warning/danger) with Shopware icons.
+    - **Images & Figures**: responsive images, figure/figcaption examples.
+    - **Forms**: single text input, selects, checkbox/radio/switch (+ disabled), file input, validation states, **quantity selector** markup (static, no JS).
+    - **Breadcrumb & Pagination**: typical storefront usage styles.
+    - **Table**: table header/body, actions column, responsive container.
+    - **Lists, Tabs & Accordion**: unordered/ordered/inline lists + static examples of nav tabs/pills and accordion.
+    - **Badges**: solid badges only (primary/secondary/success/info/warning/danger/dark).
+    - **Icons**: Shopware icon examples grouped by purpose; note that Shopware’s pack uses `arrow-*` (not `chevron-*`). Only icons that exist render.
+    - **Borders & Radius**: border utilities and radius scale examples.
+    - **Elevation & Spacing**: `.shadow-*` levels and spacing scale reference.
+    - **Background**: background utilities (grays/semantic) and basic gradient usage.
+    - **Utilities**: opacity/visibility, text extras, aspect ratio (`.ratio`), floats/clearfix, and responsive float helpers.
+
+    **Where the files live**
+
+    ```
+    custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/
+      index.html.twig
+      partials/
+        _macros.html.twig
+        _typography.html.twig
+        _links.html.twig
+        _colors.html.twig
+        _buttons-messages.html.twig
+        _images-figures.html.twig
+        _forms.html.twig
+        _breadcrumb-pagination.html.twig
+        _table.html.twig
+        _lists-tabs-accordion.html.twig
+        _badges.html.twig
+        _icons.html.twig
+        _borders-radius.html.twig
+        _elevation-spacing.html.twig
+        _background.html.twig
+        _utilities.html.twig
+        _load-states.html.twig
+    ```
+
+    **Notes**
+
+    - The controller (`StyleguideController`) sets `X-Robots-Tag: noindex, nofollow` on the response so other pages are unaffected.
+    - An optional route-alias subscriber can map the configurable path to `frontend.page.styleguide`.
+    - Icons reference Shopware’s distributed sprites; if a given icon name doesn’t exist it won’t render—use the names found under `vendor/shopware/storefront/Resources/app/storefront/dist/assets/icon/{default,solid}`.
 
 ---
 
@@ -126,8 +199,14 @@
     -   Log in with a customer that has orders, or reduce the configured amount if the shop has very few orders.
 
 -   **Cart quantity “0” does not remove items**
+
     -   Recompile theme after installing:  
         `bin/console theme:compile`
+
+-   **Styleguide not found**
+    -   Make sure **Styleguide** is enabled in plugin config and browse to the configured path (default `/styleguide`).
+    -   After changing the path: `bin/console cache:clear && bin/console theme:compile`.
+    -   Verify the controller service is public and tagged as a controller (it is by default).
 
 ---
 

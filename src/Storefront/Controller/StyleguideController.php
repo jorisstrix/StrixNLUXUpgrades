@@ -19,7 +19,6 @@ class StyleguideController extends StorefrontController
     #[Route(path: '/styleguide', name: 'frontend.page.styleguide', methods: ['GET'])]
     public function index(): Response
     {
-        // sales-channel aware toggle
         $request = $this->container->get('request_stack')->getCurrentRequest();
         $salesChannelId = $request?->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_ID);
 
@@ -28,6 +27,11 @@ class StyleguideController extends StorefrontController
             throw new NotFoundHttpException();
         }
 
-        return $this->renderStorefront('@StrixNLUxUpgrades/storefront/page/strix-styleguide/index.html.twig');
+        $response = $this->renderStorefront('@StrixNLUxUpgrades/storefront/page/strix-styleguide/index.html.twig');
+
+        // Clean, route-scoped crawler directive (works regardless of <meta> content):
+        $response->headers->set('X-Robots-Tag', 'noindex, nofollow');
+
+        return $response;
     }
 }
