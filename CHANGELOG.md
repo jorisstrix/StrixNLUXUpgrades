@@ -125,3 +125,10 @@
 
 - `custom/plugins/StrixNLUxUpgrades/README.md`
 
+### 2025-10-03 21:43 — 05d6a3b0
+- Added dynamic style guide
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/README.md`
+

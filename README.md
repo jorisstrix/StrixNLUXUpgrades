@@ -12,7 +12,7 @@
 2. **Cart quality-of-life** (merged in v1.2.0)
 
     - Cart items with quantity set to 0 are removed automatically (offcanvas cart + full cart page).  
-      Can be activated in the plugin settings.
+       Can be activated in the plugin settings.
 
 3. **Sort cart by latest added line item first** (merged in v1.3.1)
 
@@ -21,18 +21,18 @@
 4. **Show the amount of products present in Product listings** (merged in v1.3.1)
 
     - By default, the number of products found on category listing pages is shown.  
-      Can be activated in the plugin settings.
+       Can be activated in the plugin settings.
 
 5. **Show the sum of all discounts in cart/checkout** (merged in v1.4.1)
 
     - When active, the Total line in the cart/checkout summary shows the sum of all items × quantity **before** discount.  
-      A new line in the summary is added called **“Discount”** (translatable snippet), which is the sum of all line-item discounts.  
-      Can be activated in the plugin settings.
+       A new line in the summary is added called **“Discount”** (translatable snippet), which is the sum of all line-item discounts.  
+       Can be activated in the plugin settings.
 
 6. **Language selector in the footer** (merged in v1.5.0)
 
     - When active, the language selector is shown in the footer.  
-      Can be activated in the plugin settings.
+       Can be activated in the plugin settings.
 
 7. **USP bar above the header** (merged in v1.6.0)
 
@@ -47,7 +47,7 @@
 8. **Sticky header** (merged in v1.7.0)
 
     - When active, the header is sticky.  
-      Can be activated in the plugin settings.
+       Can be activated in the plugin settings.
     - The sticky header is responsive and will hide the logo below the **lg** breakpoint (992px).
     - Background color of the sticky header is set by the variable `--bs-tertiary-bg`.
 
@@ -57,6 +57,7 @@
     - Route frontend.page.styleguide (default path /styleguide); always sent with X-Robots-Tag: noindex, nofollow.
     - Config (per sales channel): styleguideEnabled, styleguidePath (override e.g. /design-system).
     - Includes: Typography, Links, Colors, Buttons & Messages, Images & Figures, Forms (incl. quantity), Breadcrumb & Pagination, Table, Lists/Tabs/Accordion, Badges, Icons, Borders & Radius, Elevation & Spacing, Background, Utilities.
+    - Styleguide can be activated in the plugin settings, as well as the path to the styleguide can be configured.
 
 ---
 
