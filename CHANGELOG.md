@@ -118,3 +118,10 @@
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/index.html.twig`
 - `custom/plugins/StrixNLUxUpgrades/src/Storefront/Controller/StyleguideController.php`
 
+### 2025-10-03 21:40 — d7d53714
+- Added dynamic style guide
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/README.md`
+
