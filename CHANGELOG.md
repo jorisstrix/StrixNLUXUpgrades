@@ -77,7 +77,7 @@
 
 ### 2025-10-03 21:08 — 8fae98fb
 
--   Added feature to enable sticky header
+-   Added dynamic styleguide
 
 **Changed files:**
 
