@@ -1,14 +1,16 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace StrixNLUxUpgrades\Storefront\Page\Checkout;
 
+use Shopware\Core\Checkout\Cart\LineItem\LineItemCollection;
+use Shopware\Core\Framework\Struct\ArrayStruct;
+use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Storefront\Page\Checkout\Cart\CheckoutCartPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoadedEvent;
 use Shopware\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoadedEvent;
-use Shopware\Core\Checkout\Cart\LineItem\LineItemCollection;
-use Shopware\Core\Framework\Struct\ArrayStruct;
-use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
@@ -33,17 +35,17 @@ final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
     public function onCartOrConfirmOrFinish(object $event): void
     {
         $salesChannelId = $event->getSalesChannelContext()->getSalesChannelId();
-        if (!(bool) $this->systemConfigService->get(self::CONFIG_KEY, $salesChannelId)) {
+        if (! (bool) $this->systemConfigService->get(self::CONFIG_KEY, $salesChannelId)) {
             return;
         }
 
         $lineItems = $this->resolveLineItems($event);
-        if (!$lineItems || $lineItems->count() === 0) {
+        if (! $lineItems || $lineItems->count() === 0) {
             return;
         }
 
         if ($event instanceof CheckoutFinishPageLoadedEvent) {
-            $filtered = $lineItems->filter(fn ($li) => !($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false)));
+            $filtered = $lineItems->filter(fn ($li) => ! ($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false)));
             $event->getPage()->getOrder()->setLineItems($filtered);
             $lineItems = $filtered;
         }
@@ -80,7 +82,7 @@ final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
             }
 
             $price = $li->getPrice();
-            if (!$price) {
+            if (! $price) {
                 continue;
             }
 

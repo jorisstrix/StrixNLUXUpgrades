@@ -1,0 +1,53 @@
+{% sw_extends '@Storefront/storefront/layout/breadcrumb.html.twig' %}
+
+{% block layout_breadcrumb_list %}
+    {% set breadcrumbDivider = 'url(data:image/svg+xml,' ~ source('@Storefront/assets/icon/solid/arrow-medium-right.svg')|url_encode ~ ')' %}
+
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {% set currentProduct = product|default(current_product()) %}
+        {% for breadcrumbCategory in breadcrumbCategories %}
+            {% set key = breadcrumbCategory.id %}
+            {% set name = breadcrumbCategory.translated.name %}
+            {% set categoryUrl = breadcrumbCategory.seoUrl %}
+
+            <li class="breadcrumb-item" {% if key is same as(categoryId) and not currentProduct %} aria-current="page" {% endif %} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                {% if breadcrumbCategory.type == 'folder' %}
+                    <div itemprop="item">
+                        <div itemprop="name">{{ name }}</div>
+                    </div>
+                {% else %}
+                    <a href="{{ categoryUrl }}" class="breadcrumb-link {% if key is same as(categoryId) and not currentProduct %} is-active{% endif %}" title="{{ name }}" {% if breadcrumbCategory.shouldOpenInNewTab %} target="_blank" {% endif %} itemprop="item">
+                        <link itemprop="url" href="{{ categoryUrl }}">
+                        <span class="breadcrumb-title" itemprop="name">{{ name }}</span>
+                    </a>
+                {% endif %}
+                <meta itemprop="position" content="{{ loop.index }}">
+            </li>
+
+            {% if not feature('v6.8.0.0') and key != (breadcrumbCategories|last).id %}
+                <div class="breadcrumb-placeholder" aria-hidden="true">
+                    {% sw_icon 'arrow-medium-right' style { size: 'fluid', pack: 'solid' } %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if currentProduct %}
+            {% set productName = currentProduct.translated.name %}
+            {% set productUrl  = seoUrl('frontend.detail.page', { productId: currentProduct.id }) %}
+
+            {% if not feature('v6.8.0.0') and breadcrumbCategories|length > 0 %}
+                <div class="breadcrumb-placeholder" aria-hidden="true">
+                    {% sw_icon 'arrow-medium-right' style { size: 'fluid', pack: 'solid' } %}
+                </div>
+            {% endif %}
+
+            <li class="breadcrumb-item is-active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{{ productUrl }}" class="breadcrumb-link is-active" title="{{ productName }}" itemprop="item">
+                    <link itemprop="url" href="{{ productUrl }}">
+                    <span class="breadcrumb-title" itemprop="name">{{ productName }}</span>
+                </a>
+                <meta itemprop="position" content="{{ breadcrumbCategories|length + 1 }}">
+            </li>
+        {% endif %}
+    </ol>
+{% endblock %}

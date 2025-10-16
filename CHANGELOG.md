@@ -108,3 +108,20 @@
 -   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Controller/StyleguideController.php`
 -   `custom/plugins/StrixNLUxUpgrades/src/Storefront/EventSubscriber/StyleguideNoIndexSubscriber.php`
 -   `custom/plugins/StrixNLUxUpgrades/src/Storefront/Routing/StyleguideRouteAliasSubscriber.php`
+### 2025-10-16 12:47 — bdd40251
+- Update Shopware 6.7.3.0
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/package-lock.json`
+- `custom/plugins/StrixNLUxUpgrades/package.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Core/Content/Cms/StrixLatestOrdersCmsElementResolver.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/breadcrumb.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Controller/StyleguideController.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/FooterLanguageDataSubscriber.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Routing/StyleguideRouteAliasSubscriber.php`
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Twig/BreadcrumbExtension.php`
+- `custom/plugins/StrixNLUxUpgrades/src/StrixNLUxUpgrades.php`
+- `custom/plugins/StrixNLUxUpgrades/tests/TestBootstrap.php`
+

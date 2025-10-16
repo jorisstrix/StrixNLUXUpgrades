@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace StrixNLUxUpgrades\Core\Content\Cms;
 
@@ -16,8 +18,9 @@ use Shopware\Core\Framework\Struct\ArrayStruct;
 
 class StrixLatestOrdersCmsElementResolver extends AbstractCmsElementResolver
 {
-    public function __construct(private readonly EntityRepository $orderRepository)
-    {
+    public function __construct(
+        private readonly EntityRepository $orderRepository
+    ) {
     }
 
     public function getType(): string
@@ -28,7 +31,7 @@ class StrixLatestOrdersCmsElementResolver extends AbstractCmsElementResolver
     public function collect(CmsSlotEntity $slot, ResolverContext $resolverContext): ?CriteriaCollection
     {
         $sc = $resolverContext->getSalesChannelContext();
-        if (!$sc || !$sc->getCustomerId()) {
+        if (! $sc || ! $sc->getCustomerId()) {
             return null;
         }
 
@@ -63,7 +66,7 @@ class StrixLatestOrdersCmsElementResolver extends AbstractCmsElementResolver
         $search = $result->get($key);
 
         $orders = $search ? $search->getEntities() : [];
-        $total  = $search && $search->getTotal() !== null ? $search->getTotal() : 0;
+        $total = $search && $search->getTotal() !== null ? $search->getTotal() : 0;
 
         $slot->setData(new ArrayStruct([
             'orders' => $orders,

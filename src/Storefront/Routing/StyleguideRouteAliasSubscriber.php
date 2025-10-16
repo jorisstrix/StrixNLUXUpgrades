@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace StrixNLUxUpgrades\Storefront\Routing;
 
@@ -12,17 +14,22 @@ class StyleguideRouteAliasSubscriber implements EventSubscriberInterface
 {
     private const CANONICAL_PATH = '/styleguide';
 
-    public function __construct(private readonly SystemConfigService $systemConfig) {}
+    public function __construct(
+        private readonly SystemConfigService $systemConfig
+    ) {
+    }
 
     public static function getSubscribedEvents(): array
     {
         // Run BEFORE RouterListener (~32). 64 is a safe bet.
-        return [ KernelEvents::REQUEST => [['onKernelRequest', 64]] ];
+        return [
+            KernelEvents::REQUEST => [['onKernelRequest', 64]],
+        ];
     }
 
     public function onKernelRequest(RequestEvent $event): void
     {
-        if (!$event->isMainRequest()) {
+        if (! $event->isMainRequest()) {
             return;
         }
 
@@ -31,7 +38,7 @@ class StyleguideRouteAliasSubscriber implements EventSubscriberInterface
         // Read global config (earliest stage); if you truly need per-sales-channel here,
         // you can later add a lightweight resolver once SC id is available.
         $enabled = (bool) ($this->systemConfig->get('StrixNLUxUpgrades.config.styleguideEnabled') ?? false);
-        if (!$enabled) {
+        if (! $enabled) {
             return;
         }
 
@@ -42,7 +49,7 @@ class StyleguideRouteAliasSubscriber implements EventSubscriberInterface
         $configuredPath = rtrim($configuredPath, '/') ?: '/';
 
         $requestPath = rtrim($request->getPathInfo(), '/') ?: '/';
-        $canonical   = rtrim(self::CANONICAL_PATH, '/') ?: '/';
+        $canonical = rtrim(self::CANONICAL_PATH, '/') ?: '/';
 
         // Already on canonical → do nothing
         if ($requestPath === $canonical) {

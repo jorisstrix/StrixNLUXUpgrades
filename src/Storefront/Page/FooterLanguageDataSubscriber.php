@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace StrixNLUxUpgrades\Storefront\Page;
 
@@ -14,11 +16,14 @@ final class FooterLanguageDataSubscriber implements EventSubscriberInterface
     public function __construct(
         private readonly HeaderPageletLoader $headerLoader,
         private readonly SystemConfigService $systemConfig
-    ) {}
+    ) {
+    }
 
     public static function getSubscribedEvents(): array
     {
-        return [GenericPageLoadedEvent::class => ['onGenericPageLoaded', 1000]];
+        return [
+            GenericPageLoadedEvent::class => ['onGenericPageLoaded', 1000],
+        ];
     }
 
     public function onGenericPageLoaded(GenericPageLoadedEvent $event): void
@@ -30,7 +35,7 @@ final class FooterLanguageDataSubscriber implements EventSubscriberInterface
             $scId
         );
 
-        if (!$enabled) {
+        if (! $enabled) {
             // Do nothing when disabled
             return;
         }
