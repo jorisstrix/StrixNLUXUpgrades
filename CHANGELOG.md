@@ -125,3 +125,47 @@
 - `custom/plugins/StrixNLUxUpgrades/src/StrixNLUxUpgrades.php`
 - `custom/plugins/StrixNLUxUpgrades/tests/TestBootstrap.php`
 
+### 2025-10-16 13:25 — 2744bf3e
+- style(ecs): apply code style fixes
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/blocks/strix-advanced-cms/latest-orders/component/sw-cms-block-strix-block-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/blocks/strix-advanced-cms/latest-orders/preview/sw-cms-preview-strix-block-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/elements/strix-latest-orders/component/sw-cms-el-strix-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/elements/strix-latest-orders/config/sw-cms-el-config-strix-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/elements/strix-latest-orders/preview/sw-cms-el-preview-strix-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/base.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/block/cms-block-strix-block-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/component/checkout/offcanvas-cart.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/component/line-item/element/quantity.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/component/product/listing.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/element/cms-element-strix-latest-orders.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer-language-widget.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/footer/footer.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/header/header.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/layout/header/strix-usp.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/cart/index.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/summary.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/summary/summary-discount.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/checkout/summary/summary-pretotal.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/index.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_background.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_badges.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_borders-radius.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_breadcrumb-pagination.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_breakpoints.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_buttons-messages.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_colors.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_elevation-spacing.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_forms.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_icons.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_images-figures.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_links.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_lists-tabs-accordion.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_load-states.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_macros.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_table.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_typography.html.twig`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_utilities.html.twig`
+

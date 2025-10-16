@@ -4,73 +4,73 @@
 {{ cap('Buttons & Messages') }}
 
 <div
-	class="row g-3">
-	{# ---------- Buttons (solid, outline, sizes, disabled) ---------- #}
-	<div class="col-lg-6">
-		<div class="border rounded-1 p-3 h-100">
-			<div class="small text-muted text-uppercase mb-2">Buttons</div>
-			<div class="d-flex flex-wrap gap-2">
-				<button class="btn btn-primary">Primary</button>
-				<button class="btn btn-secondary">Secondary</button>
-				<button class="btn btn-success">Success</button>
-				<button class="btn btn-outline-primary">Outline</button>
-				<button class="btn btn-link">Link</button>
-				<button class="btn btn-primary btn-sm">Small</button>
-				<button class="btn btn-primary" disabled>Disabled</button>
-			</div>
-		</div>
-	</div>
+     class="row g-3">
+    {# ---------- Buttons (solid, outline, sizes, disabled) ---------- #}
+    <div class="col-lg-6">
+        <div class="border rounded-1 p-3 h-100">
+            <div class="small text-muted text-uppercase mb-2">Buttons</div>
+            <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-outline-primary">Outline</button>
+                <button class="btn btn-link">Link</button>
+                <button class="btn btn-primary btn-sm">Small</button>
+                <button class="btn btn-primary" disabled>Disabled</button>
+            </div>
+        </div>
+    </div>
 
-	{# ---------- System messages (alerts) ---------- #}
-	<div class="col-lg-6">
-		<div class="border rounded-1 p-3 h-100">
-			<div class="small text-muted text-uppercase mb-2">System messages</div>
-			<div class="alert alert-success d-flex align-items-start gap-2 mb-2">
-				{% sw_icon 'checkmark' style { class:'mt-1', size:'xs' } %}
-				<div>Saved successfully.</div>
-			</div>
-			<div class="alert alert-info d-flex align-items-start gap-2 mb-2">
-				{% sw_icon 'info' style { class:'mt-1', size:'xs' } %}
-				<div>Heads up! Extra context.</div>
-			</div>
-			<div class="alert alert-warning d-flex align-items-start gap-2 mb-2">
-				{% sw_icon 'warning' style { class:'mt-1', size:'xs' } %}
-				<div>Check your input.</div>
-			</div>
-			<div class="alert alert-danger d-flex align-items-start gap-2 mb-0">
-				{% sw_icon 'x' style { class:'mt-1', size:'xs' } %}
-				<div>Something went wrong.</div>
-			</div>
-		</div>
-	</div>
+    {# ---------- System messages (alerts) ---------- #}
+    <div class="col-lg-6">
+        <div class="border rounded-1 p-3 h-100">
+            <div class="small text-muted text-uppercase mb-2">System messages</div>
+            <div class="alert alert-success d-flex align-items-start gap-2 mb-2">
+                {% sw_icon 'checkmark' style { class:'mt-1', size:'xs' } %}
+                <div>Saved successfully.</div>
+            </div>
+            <div class="alert alert-info d-flex align-items-start gap-2 mb-2">
+                {% sw_icon 'info' style { class:'mt-1', size:'xs' } %}
+                <div>Heads up! Extra context.</div>
+            </div>
+            <div class="alert alert-warning d-flex align-items-start gap-2 mb-2">
+                {% sw_icon 'warning' style { class:'mt-1', size:'xs' } %}
+                <div>Check your input.</div>
+            </div>
+            <div class="alert alert-danger d-flex align-items-start gap-2 mb-0">
+                {% sw_icon 'x' style { class:'mt-1', size:'xs' } %}
+                <div>Something went wrong.</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {# ---------- Close buttons (integrated) ---------- #}
 <div class="row g-3 mt-1">
-	<div class="col-lg-6">
-		<div class="border rounded-1 p-3 h-100">
-			<div class="small text-muted text-uppercase mb-2">Close buttons</div>
+    <div class="col-lg-6">
+        <div class="border rounded-1 p-3 h-100">
+            <div class="small text-muted text-uppercase mb-2">Close buttons</div>
 
-			<div
-				class="d-flex align-items-center flex-wrap gap-3">
-				{# Default close button #}
-				<button type="button" class="btn-close" aria-label="Close"></button>
+            <div
+                 class="d-flex align-items-center flex-wrap gap-3">
+                {# Default close button #}
+                <button type="button" class="btn-close" aria-label="Close"></button>
 
-				{# Disabled close button #}
-				<button type="button" class="btn-close" aria-label="Close" disabled></button>
+                {# Disabled close button #}
+                <button type="button" class="btn-close" aria-label="Close" disabled></button>
 
-				{# White close button on dark surface #}
-				<div class="d-inline-block bg-dark rounded p-2">
-					<button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
-				</div>
-			</div>
+                {# White close button on dark surface #}
+                <div class="d-inline-block bg-dark rounded p-2">
+                    <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+                </div>
+            </div>
 
-			<div class="text-muted small mt-2">
-				Uses
-				<code>.btn-close</code>
-				and
-				<code>.btn-close-white</code>.
-			</div>
-		</div>
-	</div>
+            <div class="text-muted small mt-2">
+                Uses
+                <code>.btn-close</code>
+                and
+                <code>.btn-close-white</code>.
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,27 +1,27 @@
 {% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
 
 {% block layout_footer_navigation_columns %}
-	{{ parent() }}
+    {{ parent() }}
 
-	{# Prefer root header, else from page vars, else our request attribute fallback #}
-	{% set effectiveHeader =
-        header is defined and header ? header
-        : (page.vars.header ?? app.request.attributes.get('_strix_header_for_footer'))
+    {# Prefer root header, else from page vars, else our request attribute fallback #}
+    {% set effectiveHeader =
+    header is defined and header ? header
+    : (page.vars.header ?? app.request.attributes.get('_strix_header_for_footer'))
     %}
 
-	{% if effectiveHeader and effectiveHeader.languages and effectiveHeader.languages.count > 1 %}
-		<div class="col-md-4 footer-column">
-			<div class="footer-column-headline footer-headline" id="footerLanguageTitle" role="heading" aria-level="2">
-				{{ 'header.languageList'|trans|sw_sanitize }}
-			</div>
+    {% if effectiveHeader and effectiveHeader.languages and effectiveHeader.languages.count > 1 %}
+        <div class="col-md-4 footer-column">
+            <div class="footer-column-headline footer-headline" id="footerLanguageTitle" role="heading" aria-level="2">
+                {{ 'header.languageList'|trans|sw_sanitize }}
+            </div>
 
-			{# NOTE: no collapse classes => always visible on mobile #}
-			<div class="footer-column-content" aria-labelledby="footerLanguageTitle">
-				<div class="footer-column-content-inner">
-					{% sw_include '@StrixNLUxUpgrades/storefront/layout/footer/footer-language-widget.html.twig'
-                       with { header: effectiveHeader } only %}
-				</div>
-			</div>
-		</div>
-	{% endif %}
+            {# NOTE: no collapse classes => always visible on mobile #}
+            <div class="footer-column-content" aria-labelledby="footerLanguageTitle">
+                <div class="footer-column-content-inner">
+                    {% sw_include '@StrixNLUxUpgrades/storefront/layout/footer/footer-language-widget.html.twig'
+                    with { header: effectiveHeader } only %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

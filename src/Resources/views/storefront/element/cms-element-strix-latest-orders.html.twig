@@ -1,36 +1,36 @@
 {% block element_strix_latest_orders %}
-	{% set orders = element.data.orders ?? [] %}
-	{% if context.customer and orders is not empty %}
-		<div class="account-overview-card account-overview-newest-order">
-			<div class="card">
-				<div class="card-body">
-					<div class="row align-items-center card-title g-2">
-						<div class="col-12 col-md">
-							<h2 class="mb-0">{{ 'account.overviewNewestOrderHeader'|trans|sw_sanitize }}</h2>
-						</div>
-						<div class="col-12 col-md-auto text-md-end">
-							<a href="{{ path('frontend.account.order.page') }}" class="btn btn-link p-0">
-								{{ 'strix.account.ShowAllOrders'|trans|sw_sanitize }}
-								{% if element.data.totalOrders is defined %}
-									({{ element.data.totalOrders }})
-								{% endif %}
-							</a>
-						</div>
-					</div>
+    {% set orders = element.data.orders ?? [] %}
+    {% if context.customer and orders is not empty %}
+        <div class="account-overview-card account-overview-newest-order">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center card-title g-2">
+                        <div class="col-12 col-md">
+                            <h2 class="mb-0">{{ 'account.overviewNewestOrderHeader'|trans|sw_sanitize }}</h2>
+                        </div>
+                        <div class="col-12 col-md-auto text-md-end">
+                            <a href="{{ path('frontend.account.order.page') }}" class="btn btn-link p-0">
+                                {{ 'strix.account.ShowAllOrders'|trans|sw_sanitize }}
+                                {% if element.data.totalOrders is defined %}
+                                    ({{ element.data.totalOrders }})
+                                {% endif %}
+                            </a>
+                        </div>
+                    </div>
 
-					<div class="order-table">
-						<div class="order-table-body" data-order-detail-loader="true">
-							{% for order in orders %}
-								{% sw_include '@Storefront/storefront/page/account/order-history/order-item.html.twig' with { order: order } %}
-								{% if not loop.last %}
-									<hr class="my-3">
-								{% endif %}
-							{% endfor %}
-						</div>
-					</div>
+                    <div class="order-table">
+                        <div class="order-table-body" data-order-detail-loader="true">
+                            {% for order in orders %}
+                                {% sw_include '@Storefront/storefront/page/account/order-history/order-item.html.twig' with { order: order } %}
+                                {% if not loop.last %}
+                                    <hr class="my-3">
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
 
-				</div>
-			</div>
-		</div>
-	{% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

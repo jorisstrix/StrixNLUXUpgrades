@@ -1,20 +1,20 @@
 {% macro cap(title) %}
-	<div class="d-flex align-items-center justify-content-between mt-5 mb-3">
-		<h2 class="h6 m-0 text-uppercase letter-spacing-1">{{ title }}</h2>
-		<div class="flex-grow-1 ms-3 border-bottom" style="opacity:.35"></div>
-	</div>
+    <div class="d-flex align-items-center justify-content-between mt-5 mb-3">
+        <h2 class="h6 m-0 text-uppercase letter-spacing-1">{{ title }}</h2>
+        <div class="flex-grow-1 ms-3 border-bottom" style="opacity:.35"></div>
+    </div>
 {% endmacro %}
 
 {% macro colorTile(name, token) %}
-	<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-		<div class="border rounded-1 overflow-hidden h-100">
-			<div class="w-100" style="height:64px;background:var({{ token }});"></div>
-			<div class="p-2 small">
-				<div class="fw-semibold">{{ name }}</div>
-				<div class="text-muted">
-					<code>var({{ token }})</code>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <div class="border rounded-1 overflow-hidden h-100">
+            <div class="w-100" style="height:64px;background:var({{ token }});"></div>
+            <div class="p-2 small">
+                <div class="fw-semibold">{{ name }}</div>
+                <div class="text-muted">
+                    <code>var({{ token }})</code>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endmacro %}

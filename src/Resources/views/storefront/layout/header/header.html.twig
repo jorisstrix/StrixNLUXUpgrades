@@ -1,11 +1,11 @@
 {% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
 
 {% block layout_header_navigation %}
-	{% if config('StrixNLUxUpgrades.config.stickyHeaderEnabled') %}
-		<div data-sticky-header="true" data-sticky-breakpoint="992">
-			{{ parent() }}
-		</div>
-	{% else %}
-		{{ parent() }}
-	{% endif %}
+    {% if config('StrixNLUxUpgrades.config.stickyHeaderEnabled') %}
+        <div data-sticky-header="true" data-sticky-breakpoint="992">
+            {{ parent() }}
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
 {% endblock %}

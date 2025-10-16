@@ -2,243 +2,243 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block layout_head_robots %}
-	<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
 {% endblock %}
 
 {% block base_content %}
-	<main class="container my-5" data-strix-styleguide>
-		<header class="mb-4">
-			<h1 class="h3 fw-semibold mb-1">Storefront Styleguide</h1>
-			<div class="text-muted">Quick visual inventory of core tokens & components.</div>
-		</header>
+    <main class="container my-5" data-strix-styleguide>
+        <header class="mb-4">
+            <h1 class="h3 fw-semibold mb-1">Storefront Styleguide</h1>
+            <div class="text-muted">Quick visual inventory of core tokens & components.</div>
+        </header>
 
-		<div
-			class="accordion" id="strixStyleguideAccordion">
+        <div
+             class="accordion" id="strixStyleguideAccordion">
 
-			{# Typography #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingTypography">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseTypography" aria-expanded="false" aria-controls="sgCollapseTypography">
-						Typography
-					</button>
-				</h2>
-				<div id="sgCollapseTypography" class="accordion-collapse collapse" aria-labelledby="sgHeadingTypography" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_typography.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Typography #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingTypography">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseTypography" aria-expanded="false" aria-controls="sgCollapseTypography">
+                        Typography
+                    </button>
+                </h2>
+                <div id="sgCollapseTypography" class="accordion-collapse collapse" aria-labelledby="sgHeadingTypography" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_typography.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Links #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingLinks">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseLinks" aria-expanded="false" aria-controls="sgCollapseLinks">
-						Links
-					</button>
-				</h2>
-				<div id="sgCollapseLinks" class="accordion-collapse collapse" aria-labelledby="sgHeadingLinks" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_links.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Links #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingLinks">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseLinks" aria-expanded="false" aria-controls="sgCollapseLinks">
+                        Links
+                    </button>
+                </h2>
+                <div id="sgCollapseLinks" class="accordion-collapse collapse" aria-labelledby="sgHeadingLinks" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_links.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Colors #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingColors">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseColors" aria-expanded="false" aria-controls="sgCollapseColors">
-						Colors
-					</button>
-				</h2>
-				<div id="sgCollapseColors" class="accordion-collapse collapse" aria-labelledby="sgHeadingColors" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_colors.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Colors #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingColors">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseColors" aria-expanded="false" aria-controls="sgCollapseColors">
+                        Colors
+                    </button>
+                </h2>
+                <div id="sgCollapseColors" class="accordion-collapse collapse" aria-labelledby="sgHeadingColors" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_colors.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Buttons & Messages #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingButtonsMsgs">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseButtonsMsgs" aria-expanded="false" aria-controls="sgCollapseButtonsMsgs">
-						Buttons & Messages
-					</button>
-				</h2>
-				<div id="sgCollapseButtonsMsgs" class="accordion-collapse collapse" aria-labelledby="sgHeadingButtonsMsgs" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_buttons-messages.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Buttons & Messages #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingButtonsMsgs">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseButtonsMsgs" aria-expanded="false" aria-controls="sgCollapseButtonsMsgs">
+                        Buttons & Messages
+                    </button>
+                </h2>
+                <div id="sgCollapseButtonsMsgs" class="accordion-collapse collapse" aria-labelledby="sgHeadingButtonsMsgs" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_buttons-messages.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Images & Figures #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingImagesFigures">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseImagesFigures" aria-expanded="false" aria-controls="sgCollapseImagesFigures">
-						Images & Figures
-					</button>
-				</h2>
-				<div id="sgCollapseImagesFigures" class="accordion-collapse collapse" aria-labelledby="sgHeadingImagesFigures" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_images-figures.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Images & Figures #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingImagesFigures">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseImagesFigures" aria-expanded="false" aria-controls="sgCollapseImagesFigures">
+                        Images & Figures
+                    </button>
+                </h2>
+                <div id="sgCollapseImagesFigures" class="accordion-collapse collapse" aria-labelledby="sgHeadingImagesFigures" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_images-figures.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Forms #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingForms">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseForms" aria-expanded="false" aria-controls="sgCollapseForms">
-						Forms
-					</button>
-				</h2>
-				<div id="sgCollapseForms" class="accordion-collapse collapse" aria-labelledby="sgHeadingForms" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_forms.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Forms #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingForms">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseForms" aria-expanded="false" aria-controls="sgCollapseForms">
+                        Forms
+                    </button>
+                </h2>
+                <div id="sgCollapseForms" class="accordion-collapse collapse" aria-labelledby="sgHeadingForms" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_forms.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Breadcrumb & Pagination #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingBreadPag">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBreadPag" aria-expanded="false" aria-controls="sgCollapseBreadPag">
-						Breadcrumb & Pagination
-					</button>
-				</h2>
-				<div id="sgCollapseBreadPag" class="accordion-collapse collapse" aria-labelledby="sgHeadingBreadPag" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_breadcrumb-pagination.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Breadcrumb & Pagination #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingBreadPag">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBreadPag" aria-expanded="false" aria-controls="sgCollapseBreadPag">
+                        Breadcrumb & Pagination
+                    </button>
+                </h2>
+                <div id="sgCollapseBreadPag" class="accordion-collapse collapse" aria-labelledby="sgHeadingBreadPag" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_breadcrumb-pagination.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Table #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingTable">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseTable" aria-expanded="false" aria-controls="sgCollapseTable">
-						Table
-					</button>
-				</h2>
-				<div id="sgCollapseTable" class="accordion-collapse collapse" aria-labelledby="sgHeadingTable" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_table.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Table #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingTable">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseTable" aria-expanded="false" aria-controls="sgCollapseTable">
+                        Table
+                    </button>
+                </h2>
+                <div id="sgCollapseTable" class="accordion-collapse collapse" aria-labelledby="sgHeadingTable" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_table.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Lists, Tabs & Accordion #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingListsTabsAcc">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseListsTabsAcc" aria-expanded="false" aria-controls="sgCollapseListsTabsAcc">
-						Lists, Tabs & Accordion
-					</button>
-				</h2>
-				<div id="sgCollapseListsTabsAcc" class="accordion-collapse collapse" aria-labelledby="sgHeadingListsTabsAcc" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_lists-tabs-accordion.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Lists, Tabs & Accordion #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingListsTabsAcc">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseListsTabsAcc" aria-expanded="false" aria-controls="sgCollapseListsTabsAcc">
+                        Lists, Tabs & Accordion
+                    </button>
+                </h2>
+                <div id="sgCollapseListsTabsAcc" class="accordion-collapse collapse" aria-labelledby="sgHeadingListsTabsAcc" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_lists-tabs-accordion.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Badges #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingBadges">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBadges" aria-expanded="false" aria-controls="sgCollapseBadges">
-						Badges
-					</button>
-				</h2>
-				<div id="sgCollapseBadges" class="accordion-collapse collapse" aria-labelledby="sgHeadingBadges" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_badges.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Badges #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingBadges">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBadges" aria-expanded="false" aria-controls="sgCollapseBadges">
+                        Badges
+                    </button>
+                </h2>
+                <div id="sgCollapseBadges" class="accordion-collapse collapse" aria-labelledby="sgHeadingBadges" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_badges.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Icons #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingIcons">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseIcons" aria-expanded="false" aria-controls="sgCollapseIcons">
-						Icons
-					</button>
-				</h2>
-				<div id="sgCollapseIcons" class="accordion-collapse collapse" aria-labelledby="sgHeadingIcons" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_icons.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Icons #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingIcons">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseIcons" aria-expanded="false" aria-controls="sgCollapseIcons">
+                        Icons
+                    </button>
+                </h2>
+                <div id="sgCollapseIcons" class="accordion-collapse collapse" aria-labelledby="sgHeadingIcons" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_icons.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Borders & Radius #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingBordersRadius">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBordersRadius" aria-expanded="false" aria-controls="sgCollapseBordersRadius">
-						Borders & Radius
-					</button>
-				</h2>
-				<div id="sgCollapseBordersRadius" class="accordion-collapse collapse" aria-labelledby="sgHeadingBordersRadius" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_borders-radius.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Borders & Radius #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingBordersRadius">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBordersRadius" aria-expanded="false" aria-controls="sgCollapseBordersRadius">
+                        Borders & Radius
+                    </button>
+                </h2>
+                <div id="sgCollapseBordersRadius" class="accordion-collapse collapse" aria-labelledby="sgHeadingBordersRadius" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_borders-radius.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Elevation & Spacing #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingElevationSpacing">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseElevationSpacing" aria-expanded="false" aria-controls="sgCollapseElevationSpacing">
-						Elevation & Spacing
-					</button>
-				</h2>
-				<div id="sgCollapseElevationSpacing" class="accordion-collapse collapse" aria-labelledby="sgHeadingElevationSpacing" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_elevation-spacing.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Elevation & Spacing #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingElevationSpacing">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseElevationSpacing" aria-expanded="false" aria-controls="sgCollapseElevationSpacing">
+                        Elevation & Spacing
+                    </button>
+                </h2>
+                <div id="sgCollapseElevationSpacing" class="accordion-collapse collapse" aria-labelledby="sgHeadingElevationSpacing" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_elevation-spacing.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Background #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingBackground">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBackground" aria-expanded="false" aria-controls="sgCollapseBackground">
-						Background
-					</button>
-				</h2>
-				<div id="sgCollapseBackground" class="accordion-collapse collapse" aria-labelledby="sgHeadingBackground" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_background.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Background #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingBackground">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseBackground" aria-expanded="false" aria-controls="sgCollapseBackground">
+                        Background
+                    </button>
+                </h2>
+                <div id="sgCollapseBackground" class="accordion-collapse collapse" aria-labelledby="sgHeadingBackground" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_background.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Loading states (Spinners, Progress & Placeholders) #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingLoadStates">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseLoadStates" aria-expanded="false" aria-controls="sgCollapseLoadStates">
-						Loading states (Spinners, Progress & Placeholders)
-					</button>
-				</h2>
-				<div id="sgCollapseLoadStates" class="accordion-collapse collapse" aria-labelledby="sgHeadingLoadStates" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_load-states.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Loading states (Spinners, Progress & Placeholders) #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingLoadStates">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseLoadStates" aria-expanded="false" aria-controls="sgCollapseLoadStates">
+                        Loading states (Spinners, Progress & Placeholders)
+                    </button>
+                </h2>
+                <div id="sgCollapseLoadStates" class="accordion-collapse collapse" aria-labelledby="sgHeadingLoadStates" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_load-states.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-			{# Utilities #}
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="sgHeadingUtilitiesMedia">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseUtilitiesMedia" aria-expanded="false" aria-controls="sgCollapseUtilitiesMedia">
-						Utilities
-					</button>
-				</h2>
-				<div id="sgCollapseUtilitiesMedia" class="accordion-collapse collapse" aria-labelledby="sgHeadingUtilitiesMedia" data-bs-parent="#strixStyleguideAccordion">
-					<div class="accordion-body">
-						{% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_utilities.html.twig' %}
-					</div>
-				</div>
-			</div>
+            {# Utilities #}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sgHeadingUtilitiesMedia">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sgCollapseUtilitiesMedia" aria-expanded="false" aria-controls="sgCollapseUtilitiesMedia">
+                        Utilities
+                    </button>
+                </h2>
+                <div id="sgCollapseUtilitiesMedia" class="accordion-collapse collapse" aria-labelledby="sgHeadingUtilitiesMedia" data-bs-parent="#strixStyleguideAccordion">
+                    <div class="accordion-body">
+                        {% sw_include '@StrixNLUxUpgrades/storefront/page/strix-styleguide/partials/_utilities.html.twig' %}
+                    </div>
+                </div>
+            </div>
 
-		</div>
-	</main>
+        </div>
+    </main>
 {% endblock %}

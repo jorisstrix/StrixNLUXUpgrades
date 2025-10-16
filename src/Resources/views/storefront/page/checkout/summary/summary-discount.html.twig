@@ -1,8 +1,8 @@
 {% block page_checkout_summary_discount %}
-	<dt class="col-7 checkout-aside-summary-label text-success">
-		{{ 'strix.cart.discountTotal'|trans|sw_sanitize }}
-	</dt>
-	<dd class="col-5 checkout-aside-summary-value text-success">
-		-{{ discountTotal|currency }}
-	</dd>
+    <dt class="col-7 checkout-aside-summary-label text-success">
+        {{ 'strix.cart.discountTotal'|trans|sw_sanitize }}
+    </dt>
+    <dd class="col-5 checkout-aside-summary-value text-success">
+        -{{ discountTotal|currency }}
+    </dd>
 {% endblock %}

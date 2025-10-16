@@ -1,32 +1,32 @@
 {% set enabled = config('StrixNLUxUpgrades.config.uspBarEnabled') %}
 {% if enabled %}
-	{% set u1 = config('StrixNLUxUpgrades.config.uspText1')|trim %}
-	{% set u2 = config('StrixNLUxUpgrades.config.uspText2')|trim %}
-	{% set u3 = config('StrixNLUxUpgrades.config.uspText3')|trim %}
+    {% set u1 = config('StrixNLUxUpgrades.config.uspText1')|trim %}
+    {% set u2 = config('StrixNLUxUpgrades.config.uspText2')|trim %}
+    {% set u3 = config('StrixNLUxUpgrades.config.uspText3')|trim %}
 
-	{% set items = [] %}
-	{% if u1 is not empty %}
-		{% set items = items|merge([u1]) %}
-	{% endif %}
-	{% if u2 is not empty %}
-		{% set items = items|merge([u2]) %}
-	{% endif %}
-	{% if u3 is not empty %}
-		{% set items = items|merge([u3]) %}
-	{% endif %}
+    {% set items = [] %}
+    {% if u1 is not empty %}
+        {% set items = items|merge([u1]) %}
+    {% endif %}
+    {% if u2 is not empty %}
+        {% set items = items|merge([u2]) %}
+    {% endif %}
+    {% if u3 is not empty %}
+        {% set items = items|merge([u3]) %}
+    {% endif %}
 
-	{% set uspInterval = (config('StrixNLUxUpgrades.config.uspInterval') ?? 2800)|intval %}
-	{% set uspDuration = (config('StrixNLUxUpgrades.config.uspDuration') ?? 1200)|intval %}
+    {% set uspInterval = (config('StrixNLUxUpgrades.config.uspInterval') ?? 2800)|intval %}
+    {% set uspDuration = (config('StrixNLUxUpgrades.config.uspDuration') ?? 1200)|intval %}
 
-	{% if items|length > 0 %}
-		<div class="bg-body-secondary border-bottom mb-lg-3">
-			<div class="container">
-				<ul class="list-unstyled d-flex w-100 align-items-center justify-content-center m-0 py-2" data-plugin="UspRotator" data-interval="{{ uspInterval }}" data-duration="{{ uspDuration }}" data-md-breakpoint="768">
-					{% for text in items %}
-						<li class="flex-fill text-center small" data-usp-item>{{ text }}</li>
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-	{% endif %}
+    {% if items|length > 0 %}
+        <div class="bg-body-secondary border-bottom mb-lg-3">
+            <div class="container">
+                <ul class="list-unstyled d-flex w-100 align-items-center justify-content-center m-0 py-2" data-plugin="UspRotator" data-interval="{{ uspInterval }}" data-duration="{{ uspDuration }}" data-md-breakpoint="768">
+                    {% for text in items %}
+                        <li class="flex-fill text-center small" data-usp-item>{{ text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
 {% endif %}
