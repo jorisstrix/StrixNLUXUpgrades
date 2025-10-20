@@ -1,4 +1,3 @@
-/* Sticky header utilities */
 .strix-sticky-fixed {
   position: fixed;
   top: 0;
@@ -6,6 +5,7 @@
   width: var(--strix-width, 100%);
   right: auto;
   z-index: 1040;
+  will-change: transform;
 }
 
 .strix-sticky-spacer {
@@ -26,6 +26,7 @@
   pointer-events: none;
   z-index: 1039;
   display: none;
+  will-change: transform;
 }
 .strix-sticky-bg.is-visible {
   display: block;

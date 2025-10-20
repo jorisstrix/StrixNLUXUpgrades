@@ -1,6 +1,7 @@
 {
     "name": "strixnl/uxupgrades",
     "description": "Plugin for Shopware UX Upgrades",
+    "version": "1.9.2",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [

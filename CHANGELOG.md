@@ -169,3 +169,23 @@
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_typography.html.twig`
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_utilities.html.twig`
 
+### 2025-10-20 12:45 — a0a407a9
+- Applied ECS and Ludwig
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/README.md`
+- `custom/plugins/StrixNLUxUpgrades/composer.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/asset/style/strix-cms.scss`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/main.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/blocks/strix-advanced-cms/latest-orders/index.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/elements/strix-latest-orders/config/index.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/module/sw-cms/elements/strix-latest-orders/index.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/snippet/de-DE.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/snippet/en-GB.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/administration/src/snippet/nl-NL.json`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/dist/storefront/js/strix-n-l-ux-upgrades/strix-n-l-ux-upgrades.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/plugin/sticky-header/sticky-header.plugin.js`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/app/storefront/src/scss/base.scss`
+- `custom/plugins/StrixNLUxUpgrades/src/Resources/public/administration/assets/strix-n-l-ux-upgrades-B1xdzA78.js.map`
+
