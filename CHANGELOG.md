@@ -171,3 +171,10 @@
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_table.html.twig`
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_typography.html.twig`
 - `custom/plugins/StrixNLUxUpgrades/src/Resources/views/storefront/page/strix-styleguide/partials/_utilities.html.twig`
+### 2025-10-20 15:41 — 0c51faea
+- Add product page to breadcrumbs
+
+**Changed files:**
+
+- `custom/plugins/StrixNLUxUpgrades/src/Storefront/Page/Checkout/UnifiedDiscountSummarySubscriber.php`
+

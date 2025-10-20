@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace StrixNLUxUpgrades\Storefront\Page\Checkout;
 
 use Shopware\Core\Checkout\Cart\LineItem\LineItemCollection;
+use Shopware\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
 use Shopware\Core\Framework\Struct\ArrayStruct;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Storefront\Page\Checkout\Cart\CheckoutCartPageLoadedEvent;
@@ -44,8 +45,12 @@ final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
             return;
         }
 
+        // On finish page: strip our custom discount line items from the order object and from the working set
         if ($event instanceof CheckoutFinishPageLoadedEvent) {
-            $filtered = $lineItems->filter(fn ($li) => ! ($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false)));
+            $filtered = $lineItems->filter(
+                fn ($li) => !($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false))
+            );
+
             $event->getPage()->getOrder()->setLineItems($filtered);
             $lineItems = $filtered;
         }
@@ -53,14 +58,23 @@ final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
         [$preSubtotal, $discountTotal] = $this->calculateTotals($lineItems);
 
         $event->getPage()->addExtension('strix_discount_summary', new ArrayStruct([
-            'preSubtotal' => $preSubtotal,
+            'preSubtotal'   => $preSubtotal,
             'discountTotal' => $discountTotal,
         ]));
     }
 
-    private function resolveLineItems(object $event): ?LineItemCollection
+    /**
+     * Resolve line items for both cart/confirm/register and order/finish.
+     *
+     * @return LineItemCollection|OrderLineItemCollection|null
+     */
+    private function resolveLineItems(object $event): LineItemCollection|OrderLineItemCollection|null
     {
-        if ($event instanceof CheckoutCartPageLoadedEvent || $event instanceof CheckoutConfirmPageLoadedEvent || $event instanceof CheckoutRegisterPageLoadedEvent) {
+        if (
+            $event instanceof CheckoutCartPageLoadedEvent
+            || $event instanceof CheckoutConfirmPageLoadedEvent
+            || $event instanceof CheckoutRegisterPageLoadedEvent
+        ) {
             return $event->getPage()->getCart()->getLineItems();
         }
 
@@ -71,27 +85,32 @@ final class UnifiedDiscountSummarySubscriber implements EventSubscriberInterface
         return null;
     }
 
-    private function calculateTotals(LineItemCollection $items): array
+    /**
+     * @param LineItemCollection|OrderLineItemCollection $items
+     * @return array{0: float, 1: float} [preSubtotal, discountTotal]
+     */
+    private function calculateTotals(LineItemCollection|OrderLineItemCollection $items): array
     {
         $preSubtotal = 0.0;
         $discountTotal = 0.0;
 
         foreach ($items as $li) {
+            // skip our synthetic discount items if any slipped through
             if ($li->getType() === 'custom' && ($li->getPayload()['is_strix_discount'] ?? false)) {
                 continue;
             }
 
             $price = $li->getPrice();
-            if (! $price) {
+            if (!$price) {
                 continue;
             }
 
-            $qty = $li->getQuantity();
-            $unitPrice = $price->getUnitPrice();
+            $qty       = (int) $li->getQuantity();
+            $unitPrice = (float) $price->getUnitPrice();
             $listPrice = $price->getListPrice()?->getPrice();
 
-            if ($listPrice && $listPrice > $unitPrice) {
-                $preSubtotal += $listPrice * $qty;
+            if ($listPrice !== null && $listPrice > $unitPrice) {
+                $preSubtotal   += $listPrice * $qty;
                 $discountTotal += ($listPrice - $unitPrice) * $qty;
             } else {
                 $preSubtotal += $unitPrice * $qty;
